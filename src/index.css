@@ -1,0 +1,238 @@
+.theme-btn, .theme-btn-submit {
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 8px 15px;
+  line-height: 1.5;
+  min-width: 100px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+  .theme-btn:focus, .theme-btn-submit:focus {
+    outline: none; }
+  .theme-btn a, .theme-btn-submit a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; }
+
+.theme-btn-primary, .theme-btn-submit {
+  background-color: #F82462;
+  color: #ffffff; }
+  .theme-btn-primary:hover, .theme-btn-submit:hover {
+    background-color: #FA6691;
+    color: #ffffff; }
+
+.theme-btn-secondery {
+  border: 1px solid #666;
+  background-color: #ffffff;
+  color: #3A3A3A; }
+  .theme-btn-secondery:hover {
+    background-color: #252525;
+    color: #ffffff; }
+
+.theme-btn-outline-white {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff; }
+  .theme-btn-outline-white:hover {
+    background-color: #ffffff;
+    color: #F82462; }
+
+.theme-btn-filled-white {
+  border: 1px solid #FA6691;
+  background-color: #ffffff;
+  color: #F82462; }
+  .theme-btn-filled-white:hover {
+    background-color: #ffffff;
+    opacity: 0.8; }
+
+.theme-btn-outline-pink {
+  background-color: #F82462;
+  border: 1px solid #FA6691;
+  color: #ffffff; }
+  .theme-btn-outline-pink:hover {
+    background-color: #ffffff;
+    color: #F82462; }
+
+.theme-btn-primary-light {
+  background-color: #FA6691;
+  color: #ffffff; }
+  .theme-btn-primary-light:hover {
+    background-color: #ffffff;
+    color: #F82462; }
+
+.theme-btn-submit {
+  width: 300px; }
+
+.theme-btn-link {
+  padding: 0;
+  display: flex; }
+  .theme-btn-link a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 8px 15px; }
+
+.btn-social {
+  color: #ffffff;
+  display: flex;
+  width: 160px;
+  justify-content: center; }
+  .btn-social span {
+    font-size: 20px;
+    margin-right: 10px; }
+
+.theme-navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f82462;
+  padding-left: 15px; }
+  .theme-navbar .app-nav-logo {
+    margin: -10px 0 0 15px; }
+  .theme-navbar .button-toggle {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 555;
+    cursor: pointer; }
+    .theme-navbar .button-toggle:focus {
+      outline: none; }
+    .theme-navbar .button-toggle .fa-bars, .theme-navbar .button-toggle .fa-times {
+      font-size: 25px;
+      color: #ffffff; }
+  .theme-navbar .collapse {
+    display: none; }
+  .theme-navbar .theme-menu.uncollapse {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 333;
+    background-color: #0809086e;
+    padding: 10rem 5rem;
+    height: 100vh; }
+    .theme-navbar .theme-menu.uncollapse .fa-arrow-right {
+      position: absolute;
+      z-index: 555;
+      right: 63px;
+      bottom: 15px;
+      color: white;
+      font-size: 3rem; }
+    .theme-navbar .theme-menu.uncollapse .theme-menu-content {
+      position: relative;
+      z-index: 555; }
+    .theme-navbar .theme-menu.uncollapse .theme-menu-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: #F82462;
+      transform: skewX(-8deg) translateX(-52px) skewY(-2deg) translateY(-68px);
+      border-radius: 2px; }
+  .theme-navbar .uncollapse .wrraper {
+    width: 100%; }
+    .theme-navbar .uncollapse .wrraper ul {
+      list-style: none;
+      margin: 0; }
+      .theme-navbar .uncollapse .wrraper ul li a {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: #ffffff;
+        line-height: 150%; }
+    .theme-navbar .uncollapse .wrraper p {
+      color: #ffffff;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase; }
+      .theme-navbar .uncollapse .wrraper p .theme-text-small {
+        opacity: 0.8;
+        text-transform: capitalize; }
+    .theme-navbar .uncollapse .wrraper .fab {
+      font-size: 2rem;
+      margin-right: 20px; }
+  .theme-navbar .theme-nav-right {
+    position: relative;
+    z-index: 444;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    list-style: none;
+    margin-left: auto;
+    align-items: center;
+    padding: 20px; }
+    .theme-navbar .theme-nav-right li {
+      display: flex; }
+      .theme-navbar .theme-nav-right li > a {
+        display: block;
+        padding: .55rem 1rem;
+        color: #ffffff;
+        text-decoration: none; }
+    .theme-navbar .theme-nav-right .dropdown-toggle {
+      background: transparent;
+      border: none;
+      color: white;
+      padding-right: 30px; }
+      .theme-navbar .theme-nav-right .dropdown-toggle img {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%; }
+      .theme-navbar .theme-nav-right .dropdown-toggle:focus {
+        box-shadow: none; }
+    .theme-navbar .theme-nav-right .dropdown-menu {
+      padding: 0;
+      width: 100%; }
+      .theme-navbar .theme-nav-right .dropdown-menu .dropdown-item {
+        background: #F82462;
+        padding: 10px;
+        color: white;
+        border-bottom: 1px solid lightgray; }
+
+@media (max-width: 500px) {
+  .theme-navbar {
+    padding-top: 10px;
+    padding-left: 0; }
+  .theme-navbar .theme-nav-right {
+    flex-wrap: nowrap;
+    justify-content: right;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 10px;
+    border-top: 1px solid #FA6691; }
+    .theme-navbar .theme-nav-right li a {
+      padding: .3rem; } }
+
+@media (max-width: 500px) and (max-width: 500px) {
+  .theme-nav-left {
+    padding-left: 10px; }
+  .theme-nav-right {
+    z-index: 0 !important; }
+  .theme-menu {
+    overflow: none;
+    background-color: #f82462;
+    height: 0 !important;
+    min-height: 100vh;
+    padding: 4rem 1rem 0 !important; }
+  .theme-menu-bg {
+    transform: none !important; } }
+
+ul li {
+  text-decoration: none;
+  list-style: none;
+  padding: 10px; }
+
+a {
+  text-decoration: none;
+  color: #fff; }
