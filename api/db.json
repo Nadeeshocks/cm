@@ -1,0 +1,14 @@
+{
+
+    "users" : [{
+
+        "id" : 1,
+        "name" : "Sher Ali",
+        "email" : "sheralirozdar@gmail.com",
+        "password": "admin1234",
+        "photo": "/images/sherali.jpg"
+
+    }
+    ]
+
+}
