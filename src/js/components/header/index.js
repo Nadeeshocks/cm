@@ -1,7 +1,8 @@
-import React from 'react';   
+import React from 'react';  
+import ThemeNavbar from '../../containers/navbar'; 
 
-export default props => {
-    return <div>
-        <h1>Hi This is Header</h1>
-    </div>
-};
+export default props => (
+    <header>
+        <ThemeNavbar />
+    </header>
+);

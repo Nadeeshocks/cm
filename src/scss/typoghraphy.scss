@@ -1,0 +1,78 @@
+h1{
+  font-family: 'GothamPro';
+  color: $secondary-color;
+  font-size: 49px;
+	font-weight: bold;
+}
+h2{
+  font-family: 'GothamPro';
+  color:$secondary-color;
+  font-size: 43px;
+	font-weight: bold;
+}
+h3{
+  font-family: 'GothamPro';
+  color:$secondary-color;
+  font-size: 32px;
+  font-weight: bold;
+}
+h4{
+  font-family: 'GothamPro-Bold';
+  color:$secondary-color;
+  font-size: 20px;
+  font-weight: bold;
+}
+h5{
+  font-family: 'GothamPro-Bold';
+  color:$secondary-color;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 9%;
+}
+h6{
+  font-family: 'GothamPro-Bold';
+   color:$secondary-color;
+  font-size: 16px;
+  letter-spacing: 9%;
+}
+/*
+* default font is set in body ,html tag
+* default font is "Helvetica Neue"
+*/
+.theme-big-text{
+    font-size: 9rem !important;
+    color: #f4f5f6 !important;
+    padding: 4rem 0 0 !important;
+    opacity: 0.6;
+    margin-bottom: -15px;
+    font-weight: bold;
+    text-align: center;
+}
+.theme-text-small{
+  font-size : 12px;
+  line-height: 126%;
+}
+.theme-text-bold{
+  font-size: 14px;
+  line-height: 144%;
+  font-weight: bold;
+}
+.theme-text-small-bold{
+  font-size: 12px;
+  line-height: 126%;
+  font-weight: bold;
+}
+.theme-text-primary{
+  color:$primary-color;
+  font-weight: bold;
+}
+.text-gray{
+  color:#999;
+}
+@media (max-width : 676px){
+  .theme-big-text{
+    font-size: 4rem !important;
+    line-height: 120%;
+    display: none;
+  }
+}

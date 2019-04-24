@@ -1,36 +1,16 @@
 
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import ThemeBtn from './components/button/index';
-import Footer from './components/footer/index';
-import Header from './components/header/index';
-import Navbar from './components/navbar/index';
-import NavbarRight from './components/navbar/navbar-right';
+import Layout from './components/layout/index';
+import store from './config/store';
 
 export default () => {
     return (
-        <BrowserRouter>
-            <NavbarRight />
-            {/* <Header />
-            <ThemeBtn href="/" className="theme-btn-primary">
-                sign in
-            </ThemeBtn>
-            <br />
-            <br />
-            <ThemeBtn className="theme-btn-secondery">
-                Sign Up
-            </ThemeBtn>
-            <br />
-            <br />
-            <ThemeBtn className="theme-btn-outline-pink">
-                Sign Up
-            </ThemeBtn>
-            <br />
-            <br />
-            <ThemeBtn className="theme-btn-submit">
-                Sign Up
-            </ThemeBtn>
-            <Footer /> */}
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <Layout />
+            </BrowserRouter>
+        </Provider>
     );
 }

@@ -1,0 +1,24 @@
+.sign-up{
+  height: 100%;
+  display: flex;
+  .side-bar{
+    min-height: 100%;
+    background-color: $primary-color;
+    flex :1;
+    img{
+      margin: 30px 10px;
+    }
+  }
+  .main-form{
+    width :100%;
+    flex :3;
+    padding :20px 30px;
+    .social-buttons{
+        display: flex;
+        justify-content: space-between;
+      }    
+      .login-or-divider {
+        margin: 30px 0;
+      }
+  }
+}

@@ -1,0 +1,42 @@
+.sign-in{
+  height: 100vh;
+  display: flex;
+  .side-bar{
+    background-color: $primary-color;
+    flex :1;
+    img{
+      margin: 30px 10px;
+    }
+  }
+  .main-form{
+    width :100%;
+    flex :3;
+    padding :20px 30px;
+      .social-buttons{
+        display: flex;
+        justify-content: space-between;
+      }    
+      .login-or-divider {
+        margin: 30px 0;
+      }
+      .theme-form{
+        max-width: 50%;
+      }
+    }
+  }
+  .flex-row{
+    max-width :100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div{
+      flex :1;
+    }
+  }
+
+  @media(max-width : 500px){
+    .side-bar{
+      display: none;
+    }
+
+  }

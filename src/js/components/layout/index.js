@@ -1,7 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
+import routes from "../../config/routes";
+import Header from '../header/index';
+import Footer from '../footer/index';
 
-export default props => {
-    return<div>Layout</div>
-};
+const Layout = props => {
+    const { location } = props;
+    let hideHeader = ['/login', '/register', '/forgotpassword', '/confirm'].indexOf(location.pathname) > -1;
+    
+    return (
+        <div>
+            {
+                hideHeader ? null : <Header />
+            }
+            {routes}
+            {
+                hideHeader ? null : <Footer />
+            }
+        </div>
+    );
+}
+
+export default withRouter(Layout);

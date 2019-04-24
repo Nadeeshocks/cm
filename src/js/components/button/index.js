@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
-
 
 export default props => {
     return (
-        <Button className={`theme-btn ${props.className}`}>
-            <Link to={props.children}>
+        <Link to={props.href}>
+            <button className={`theme-btn ${props.className}`}>
                 {props.children}
-            </Link>
-        </Button>
+            </button>
+        </Link>
     )
 };

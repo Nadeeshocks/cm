@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './js/App';
 import * as serviceWorker from './serviceWorker';
+import App from './js/App';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
+
+// CONVERT IT TO LATEST FIRBASE API CHANGES 
+// https://github.com/Sv1nnet/mario-plan-migrated-on-redux601-and-firebase300-alpha
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

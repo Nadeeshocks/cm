@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default props => {
-    return<div>
-        <h1>This is footer</h1>
-    </div>
-};
+export default props => (
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+)
