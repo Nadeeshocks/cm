@@ -1,7 +1,8 @@
 import ACTIONS from './actionType';
-// import axios from "axios";
 
-  export const signIn = ({ credentials, firebase }) => (dispatch, getState) => {
+export const signIn = (credentials) => (dispatch, getState, { getFirebase }) => {
+  const firebase = getFirebase();
+
     firebase.auth().signInWithEmailAndPassword(
       credentials.email,
       credentials.password,
@@ -13,6 +14,15 @@ import ACTIONS from './actionType';
       dispatch({ type: ACTIONS.LOGIN_ERROR , payload : err});
     })
   }
+
+export const signOut = () => (dispatch, {getFirebase})=>{
+  const firebase = getFirebase();
+  console.log("zgfhjf,");
+  firebase.auth.signOut().then(()=>{
+    dispatch({ type : ACTIONS.SIGN_OUT})
+  })
+
+}
 
 // const registration = (data) => async (dispatch, {getFirebase, getFirestore}) => {
 //   try {

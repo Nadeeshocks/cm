@@ -20,9 +20,12 @@ class ThemeNavbar extends React.Component {
   }
 }
 const mapStateToProps = state => {
+  return{ }
+}
+const mapDispatchToProps = state => {
   return{
-    
+        
   }
 }
 
-export default connect()(ThemeNavbar);
+export default connect(mapStateToProps , )(ThemeNavbar);

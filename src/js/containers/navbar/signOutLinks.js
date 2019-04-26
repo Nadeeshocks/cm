@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOut } from '../auth/action';
 
-const SignOutLinks = () => {
+const SignOutLinks = ( props ) => {
 
   const [dropdownOpen, setdropdownOpen] = useState(false);
   const toggle = () => setdropdownOpen(!dropdownOpen);
@@ -21,8 +23,8 @@ const SignOutLinks = () => {
             <p>Hello Nadia &nbsp; 
               {
                 dropdownOpen ? 
-                  <i class="fas fa-angle-down" onClick={toggle}></i> :
-                <i class="fas fa-angle-up" onClick={toggle}></i>  
+                  <i className="fas fa-angle-down" onClick={toggle}></i> :
+                <i className="fas fa-angle-up" onClick={toggle}></i>  
               }
             </p>
           </div>
@@ -32,7 +34,9 @@ const SignOutLinks = () => {
                 <li>
                   <Link to="/dashboard">My Account</Link>
                 </li>
-                <li>Log Out</li>
+                <li onClick= { props.signOut}>
+                  <a>Log Out</a>
+                </li>
               </ul> : ''
           }
           
@@ -41,4 +45,14 @@ const SignOutLinks = () => {
     </ul>
   );
 }
-export default SignOutLinks;
+
+const mapStateToProps = state =>{
+  return{
+  }
+}
+const mapDispatchToProps = dispatch =>{
+  return{
+    signOut : ()=> dispatch(signOut)
+  }
+} 
+export default connect(mapStateToProps , mapDispatchToProps)( SignOutLinks );

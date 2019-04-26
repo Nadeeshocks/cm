@@ -22,6 +22,7 @@ class SignIn extends Component {
 
   render() {
     const { password, email } = this.state;
+    const { authError } = this.props;
     return (
       <div className="sign-in">
         <div className="side-bar">
@@ -83,9 +84,11 @@ class SignIn extends Component {
             </div>
             <button className="theme-btn theme-btn-primary w-50" onClick={this.handleSubmit}>Sign In</button>
           </form>
+          { authError ?
+            <div className ="alert alert-danger">{authError} </div> : ""}
 
           <div className="login-or-divider"></div>
-          <div style = {{maxWidth : '50%'}}>
+          <div style={{ maxWidth: '50%' }}>
             <div className="flex-row">
               <div>Don't have an account?</div> &nbsp;
               <Button className="theme-btn-filled-white" href="/">
@@ -99,13 +102,14 @@ class SignIn extends Component {
     )
   }
 }
-const mapStatesToProps = state =>{
-  return{
+const mapStatesToProps = state => {
+  return {
+    authError: state.auth.authError
   }
 }
-const mapDispatchToProps = dispatch =>{
-  return{
-    signIn : (creds) => dispatch(signIn(creds))
+const mapDispatchToProps = dispatch => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
   }
 }
 
