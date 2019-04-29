@@ -25,12 +25,13 @@ export default (state = initialState, action) => {
         break;
         
       case ACTIONS.REGISTRATION_SUCCESS:
-        draft.loading = false;
-        draft.created = true;
+        console.log('registration success');
+        draft.authError = false;
         break;
-
+        
       case ACTIONS.REGISTRATION_ERROR:
-        draft.authError = action.payload.err;
+        console.log(action.payload.message);
+        draft.authError = action.payload.message;
         break;
 
       default:

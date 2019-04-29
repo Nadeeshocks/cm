@@ -2,30 +2,37 @@ import React, { Component } from 'react';
 import Button from '../../../components/button/index';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
+import { connect } from 'react-redux';
+import { signUp } from '../action';
+import { Redirect } from 'react-router-dom';
 
-export default class SignIn extends Component {
+class SignUp extends Component {
   state = {
-    password: '',
     email: '',
-    name :'',
-    phone :'',
-    confirmPassword :''
+    password: '',
+    confirmPassword: "",
+    phoneNumber: "",
+    fullName: "",
+    gender: "",
+    address: "",
+    picture: "",
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(e);
+    this.props.signUp(this.state);
   }
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
-    }, () => {
-      console.log(this.state.password);
     })
   }
 
   render() {
-    const { password, email, name, phone, confirmPassword } = this.state;
+    const { password, email, fullName, phoneNumber, confirmPassword } = this.state;
+    const { auth, authError } = this.props;
+    if (auth.uid) return <Redirect to='/' />
+
     return (
       <div className="sign-up">
         <div className="side-bar">
@@ -80,23 +87,23 @@ export default class SignIn extends Component {
                   </div>
                   <div className="input-field">
                     <input
-                      id="name"
+                      id="fullName"
                       type="text"
                       className="validate"
-                      value={name}
+                      value={fullName}
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="fullName">Name</label>
                   </div>
                   <div className="input-field">
                     <input
-                      id="phone"
+                      id="phoneNumber"
                       type="text"
                       className="validate"
-                      value={phone}
+                      value={phoneNumber}
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="phone">Phone Number</label>
+                    <label htmlFor="phoneNumber">Phone Number</label>
                   </div>
                   <div className="input-field">
                     <input
@@ -133,6 +140,8 @@ export default class SignIn extends Component {
                     Sign Up
                   </button>
                 </form>
+                {authError ?
+                  <div className="alert alert-danger">{authError} </div> : ""}
               </Col>
             </Row>
             <Row>
@@ -152,3 +161,16 @@ export default class SignIn extends Component {
     )
   }
 }
+const mapStatesToProps = state => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
+  }
+}
+
+export default connect(mapStatesToProps, mapDispatchToProps)(SignUp);

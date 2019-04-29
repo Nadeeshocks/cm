@@ -3,6 +3,7 @@ import Button from '../../../components/button/index';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signIn } from '../action';
+import { Redirect } from 'react-router-dom';
 
 class SignIn extends Component {
   state = {
@@ -22,7 +23,10 @@ class SignIn extends Component {
 
   render() {
     const { password, email } = this.state;
-    const { authError } = this.props;
+    const { authError , auth } = this.props;
+
+    if(auth.uid) return <Redirect to='/' />
+
     return (
       <div className="sign-in">
         <div className="side-bar">
@@ -104,7 +108,8 @@ class SignIn extends Component {
 }
 const mapStatesToProps = state => {
   return {
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth : state.firebase.auth
   }
 }
 const mapDispatchToProps = dispatch => {

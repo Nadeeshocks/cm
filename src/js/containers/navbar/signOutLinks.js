@@ -7,7 +7,7 @@ const SignOutLinks = ( props ) => {
 
   const [dropdownOpen, setdropdownOpen] = useState(false);
   const toggle = () => setdropdownOpen(!dropdownOpen);
-
+  
   return (
     <ul className="right-menu">
       <li>
@@ -34,7 +34,7 @@ const SignOutLinks = ( props ) => {
                 <li>
                   <Link to="/dashboard">My Account</Link>
                 </li>
-                <li onClick= { props.signOut}>
+                <li onClick= {props.signOut}>
                   <a>Log Out</a>
                 </li>
               </ul> : ''
@@ -52,7 +52,7 @@ const mapStateToProps = state =>{
 }
 const mapDispatchToProps = dispatch =>{
   return{
-    signOut : ()=> dispatch(signOut)
+    signOut : ()=> dispatch(signOut())
   }
 } 
 export default connect(mapStateToProps , mapDispatchToProps)( SignOutLinks );
