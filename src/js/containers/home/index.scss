@@ -1,0 +1,12 @@
+.home {
+  height: 100%;
+  width: 100%;
+  .home-head{
+    background-color: $primary-color;
+    margin-bottom: 15px;
+    color:$white;
+    height: calc(100vh - 76px);
+  }
+  .home-body{
+  }
+}

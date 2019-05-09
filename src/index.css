@@ -420,6 +420,72 @@ header {
     .sign-up .main-form .login-or-divider {
       margin: 30px 0; }
 
+.block-el {
+  position: relative;
+  width: 30%;
+  height: 200px;
+  padding: 30px;
+  margin: 10px;
+  float: left; }
+  .block-el .block-content {
+    position: relative;
+    z-index: 3333;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+    .block-el .block-content button {
+      display: none; }
+    .block-el .block-content span {
+      margin-bottom: 1rem; }
+    .block-el .block-content p {
+      flex: 1;
+      width: 100px;
+      height: 100px;
+      margin: 0; }
+    .block-el .block-content div.desc {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+  .block-el:hover .block-bg {
+    background-color: #F82462; }
+  .block-el:hover .block-content span {
+    color: #ffffff; }
+  .block-el:hover .block-content button {
+    display: block; }
+
+.block-el > .block-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
+  transform: skewX(-15deg);
+  box-shadow: 2px 2px 17px 0px #eceaea;
+  border-radius: 2px; }
+
+.block-el:first-child .block-bg::before {
+  content: '';
+  position: absolute;
+  z-index: 333;
+  width: 65px;
+  height: 210px;
+  transform: skewX(15deg) translateX(-35px);
+  background-color: #fff; }
+
+.block-el:last-child .block-bg::before {
+  content: '';
+  position: absolute;
+  right: -74px;
+  top: -10px;
+  z-index: 333;
+  width: 65px;
+  height: 210px;
+  -webkit-transform: skewX(15deg) translateX(-35px);
+  transform: skewX(15deg) translateX(-35px);
+  background-color: #ffff; }
+
 input:not([type]):focus:not([readonly]),
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
