@@ -36,7 +36,8 @@ export const signUp = (newUser) => (dispatch, getState, { getFirebase, getFirest
       fullName: newUser.fullName,
       phoneNumber: newUser.phoneNumber,
       address: newUser.address,
-      initials: newUser.fullName[0]
+      initials: newUser.fullName[0],
+      image:newUser.url
     })
   }).then(()=>{
     dispatch({ type : ACTIONS.REGISTRATION_SUCCESS});
