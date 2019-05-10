@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default props =>{
   const { catagory } = props;
-  const name = catagory.cat_name.replace(" ", "-");
+  const name = catagory.cat_name.replace(/\s+/g, '-');;
   return (
     <div className="block-el">
       <div className="block-content">
