@@ -15,7 +15,10 @@ class SignUp extends Component {
     fullName: "",
     gender: "",
     address: "",
-    picture: "",
+    picture: null,
+    url: null,
+   
+    // images :null
   }
 
   handleSubmit = e => {
@@ -23,16 +26,35 @@ class SignUp extends Component {
     this.props.signUp(this.state);
   }
   handleChange = e => {
+  
+    
     this.setState({
       [e.target.id]: e.target.value
     })
   }
+displayPicture(event){
+  let reader=new FileReader();
+  let file=event.target.files[0];
+  reader.onloadend = () =>{
+    this.setState({
+      picture: file,
+      url:reader.result
+    },()=>{
+      // console.log(this.state.picture);
+      console.log(this.state.url);
 
+    });
+  };
+reader.readAsDataURL(file);
+}
   render() {
     const { password, email, fullName, phoneNumber, confirmPassword } = this.state;
     const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to='/' />
-
+    const previewStyle = {
+      maxHeight: "50px",
+      maxWidth: "50px"
+    }
     return (
       <div className="sign-up">
         <div className="side-bar">
@@ -125,14 +147,17 @@ class SignUp extends Component {
                     />
                     <label htmlFor="confirmPassword">Confirm Password</label>
                   </div>
-                  <div class="file-field input-field">
-                    <div style={{ background: 'transparent', boxShadow: 'none'}} class="btn">
+                  <div className="file-field input-field">
+                    <div style={{ background: 'transparent', boxShadow: 'none'}} className="btn">
                       <span>Photo</span>
-                      <input type="file" />
+                      <input id="input" type="file" onChange={
+                        (event) =>{ this.displayPicture(event); }
+                      }/>
+                       <img src={this.state.url} style={previewStyle}/>
                     </div>
 
-                    <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text"
+                    <div className="file-path-wrapper">
+                      <input className="file-path validate" type="text"
                         placeholder="Upload file" />
                     </div>
                   </div>
