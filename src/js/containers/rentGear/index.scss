@@ -1,8 +1,326 @@
-.home {
-  
-  .home-head{
-    
+.rent-gear {  
+  .rent-gear-head{
+    padding-top : 3rem;
+    margin-bottom: 2rem;
+    .theme-page-title{
+      margin-bottom: 0;
+    }
+    nav{
+      background: transparent;
+      box-shadow: none;
+      ol{
+        background :transparent;
+        padding-left :0;
+        a{
+          text-decoration: none;
+          color: $secondary-color;
+        }
+      }
+    }
   }
-  .home-body{
+  .rent-gear-body{
+    margin-bottom: 3rem;
+    //  CSS for sidebar component
+    .sidebar{
+      padding: 10px 0;
+      background-color: $gray-lighten;
+      .sidebar-title{
+        position: relative;
+        display: block;
+        padding: .85rem 1.25rem;
+        font-weight: 300;
+      }
+      .sidebar-wrapper{
+        .list-group{
+          .list-group-item{
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            div{
+              position: relative;
+              padding: .8rem 1.25rem;
+            }
+            &:hover{
+              background-color: $gray-light;
+            }
+          }
+
+          .list-group-item > .item-active{
+            background-color: $primary-color;
+            color: $white;
+            &::after{
+              content: "";
+              position: absolute;
+              right: -17px;
+              top: 7px;
+              z-index: 444;
+              border: 17px solid;
+              border-color:$primary-color $primary-color transparent transparent;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+
+    // CSS for main component
+    .main-wrapper{
+      padding-left: 30px;
+      .main_head{
+        div{
+          display: flex;
+          align-items: center;
+        }
+        margin-bottom: 20px;
+      }
+      .search{
+        flex:3;
+        .theme-form{
+          margin: 0;
+          display: flex;
+          align-items: flex-end;
+          height: 100%;
+          max-width: 800px;
+          width: 100%;
+          .location-input {
+            flex: 1;
+            margin-right: 15px;
+            position: relative;
+          }
+          .search-input {
+            flex: 1.5;
+            position: relative;
+            margin-right: 15px;
+          }
+        }
+      }
+      .views{
+        flex:1;
+        display: flex;
+        justify-content: center;
+        border: none;
+        .card-view , .list-view , .table-view{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width:40px;
+          height: 40px;
+          border :1px solid $primary-color;
+          color :$primary-color;
+          .fa{
+            font-size: 1.3rem;
+          }
+        }
+        .table-view{
+          display: flex;
+          flex-direction: column;
+
+          .fa:first-child{
+            padding-top:8px;
+            line-height: 0;
+          }
+        }
+        .nav-item{
+          margin-right: 8px;
+          .nav-link{
+            padding: 0;
+            border : none;
+          }
+          .active {
+            background-color: $primary-color;
+            .fa{
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .gear_list_view{
+        border: none;
+        background-color: $gray-light;
+        margin-bottom: 1.5rem;
+        position: relative;
+        transition: all 0.6s ease-in-out;
+        flex-direction: row;
+        .card-img{
+          flex-basis: 25%;
+          display: flex;
+          align-items: center;
+          .card-img-top{
+            padding: 10px;
+            height: 180px;
+          }
+        }
+        .card-body{
+          flex-basis: 75%;
+          padding: 0;
+          text-align: left;
+          display: flex;
+          .card-center{
+            flex:2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .card-title{
+              text-transform: uppercase;
+              font-size: 0.9rem;
+              margin-bottom: 12px;
+            }
+            .card-subtitle{
+              font-size: 0.7rem;
+              font-weight: 100;
+              margin-bottom: 15px;
+              color:#666;
+              .stars{
+                color:$primary-color;
+              }
+              .fa-map-marker{
+                color:$primary-color;
+              }
+            }
+            .card-text{
+              font-size: 0.8rem;
+              letter-spacing: 0.5px;
+              color:#666;
+            }
+          }
+          .card-right{
+            flex:1;
+            border-left: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            .card-text{
+              margin: 0;
+              margin-bottom: 0.8rem;
+              .price{
+                font-size: 1.5rem;
+                font-weight: bold;
+              }
+            }
+            .buttons{
+              width:100%;
+              text-align: center;
+              .cart{
+                width:60%;
+                border-radius: 0;
+                background-color: $primary-color;
+                border: none;
+                color:$white;
+                margin-right: 10px;
+              }
+              .fav{
+                width:20%;
+                border: 1px solid $primary-light-color;
+                background-color: #fff;
+                border-radius: 0;
+                color: $primary-color;
+              }
+            }
+          }
+        }
+        &:hover{
+          transition: all 0.6s ease-in-out;
+        }
+      }
+
+      .gear_table_view{
+        border: none;
+        background-color: $gray-light;
+        margin-bottom: 1.5rem;
+        position: relative;
+        transition: all 0.6s ease-in-out;
+        flex-direction: row;
+        .card-img{
+          flex-basis: 15%;
+          display: flex;
+          align-items: center;
+          .card-img-top{
+            padding: 10px;
+            height: 100px;
+          }
+        }
+        .card-body{
+          flex-basis: 85%;
+          padding: 0;
+          text-align: left;
+          display: flex;
+          .card-center{
+            flex:3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            .card-title{
+              text-transform: uppercase;
+              font-size: 0.9rem;
+              margin-bottom: 15px;
+            }
+            .card-subtitle{
+              font-size: 0.7rem;
+              font-weight: 100;
+              color:#666;
+              .stars{
+                color:$primary-color;
+              }
+              .fa-map-marker{
+                color:$primary-color;
+              }
+            }
+          }
+          .card-right{
+            flex:2;
+            border-left: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            .card-text{
+              text-align: center;
+              margin: 0;
+              flex:1;
+              .price{
+                font-size: 1.5rem;
+                font-weight: bold;
+              }
+            }
+            .buttons{
+              width:100%;
+              text-align: center;
+              flex:1;
+              box-sizing: border-box;
+              .cart{
+                width:35%;
+                border-radius: 0;
+                border: 1px solid $primary-light-color;
+                background-color: transparent;
+                color: $primary-color;
+                margin-right: 10px;
+                &:hover{
+                  background-color: $primary-color;
+                  color: $white;
+                }
+              }
+              .fav{
+                width:35%;
+                border: 1px solid $primary-light-color;
+                background-color: transparent;
+                border-radius: 0;
+                color: $primary-color;
+                &:hover{
+                  background-color: $primary-color;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+        &:hover{
+          transition: all 0.6s ease-in-out;
+        }
+      }
+    }
   }
 }

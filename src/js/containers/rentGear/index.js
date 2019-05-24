@@ -10,11 +10,18 @@ import {
 } from 'reactstrap';
 
 class RentGear extends Component {
+  state = {
+    category: ""
+  }
+
+  selectedCategory = (value) => {
+    this.setState({
+      category: value
+    })
+  }
   render() {
     const { catagories} = this.props;
-    console.log(catagories);
     return (
-
       <div className="rent-gear">
         <div className="rent-gear-head">
           <Container>

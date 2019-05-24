@@ -486,6 +486,257 @@ header {
   transform: skewX(15deg) translateX(-35px);
   background-color: #ffff; }
 
+.rent-gear .rent-gear-head {
+  padding-top: 3rem;
+  margin-bottom: 2rem; }
+  .rent-gear .rent-gear-head .theme-page-title {
+    margin-bottom: 0; }
+  .rent-gear .rent-gear-head nav {
+    background: transparent;
+    box-shadow: none; }
+    .rent-gear .rent-gear-head nav ol {
+      background: transparent;
+      padding-left: 0; }
+      .rent-gear .rent-gear-head nav ol a {
+        text-decoration: none;
+        color: #252525; }
+
+.rent-gear .rent-gear-body {
+  margin-bottom: 3rem; }
+  .rent-gear .rent-gear-body .sidebar {
+    padding: 10px 0;
+    background-color: #f8f8f8; }
+    .rent-gear .rent-gear-body .sidebar .sidebar-title {
+      position: relative;
+      display: block;
+      padding: .85rem 1.25rem;
+      font-weight: 300; }
+    .rent-gear .rent-gear-body .sidebar .sidebar-wrapper .list-group .list-group-item {
+      background-color: transparent;
+      border: none;
+      padding: 0; }
+      .rent-gear .rent-gear-body .sidebar .sidebar-wrapper .list-group .list-group-item div {
+        position: relative;
+        padding: .8rem 1.25rem; }
+      .rent-gear .rent-gear-body .sidebar .sidebar-wrapper .list-group .list-group-item:hover {
+        background-color: #f3f3f3; }
+    .rent-gear .rent-gear-body .sidebar .sidebar-wrapper .list-group .list-group-item > .item-active {
+      background-color: #F82462;
+      color: #ffffff; }
+      .rent-gear .rent-gear-body .sidebar .sidebar-wrapper .list-group .list-group-item > .item-active::after {
+        content: "";
+        position: absolute;
+        right: -17px;
+        top: 7px;
+        z-index: 444;
+        border: 17px solid;
+        border-color: #F82462 #F82462 transparent transparent;
+        transform: rotate(45deg); }
+  .rent-gear .rent-gear-body .main-wrapper {
+    padding-left: 30px; }
+    .rent-gear .rent-gear-body .main-wrapper .main_head {
+      margin-bottom: 20px; }
+      .rent-gear .rent-gear-body .main-wrapper .main_head div {
+        display: flex;
+        align-items: center; }
+    .rent-gear .rent-gear-body .main-wrapper .search {
+      flex: 3; }
+      .rent-gear .rent-gear-body .main-wrapper .search .theme-form {
+        margin: 0;
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        max-width: 800px;
+        width: 100%; }
+        .rent-gear .rent-gear-body .main-wrapper .search .theme-form .location-input {
+          flex: 1;
+          margin-right: 15px;
+          position: relative; }
+        .rent-gear .rent-gear-body .main-wrapper .search .theme-form .search-input {
+          flex: 1.5;
+          position: relative;
+          margin-right: 15px; }
+    .rent-gear .rent-gear-body .main-wrapper .views {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      border: none; }
+      .rent-gear .rent-gear-body .main-wrapper .views .card-view, .rent-gear .rent-gear-body .main-wrapper .views .list-view, .rent-gear .rent-gear-body .main-wrapper .views .table-view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #F82462;
+        color: #F82462; }
+        .rent-gear .rent-gear-body .main-wrapper .views .card-view .fa, .rent-gear .rent-gear-body .main-wrapper .views .list-view .fa, .rent-gear .rent-gear-body .main-wrapper .views .table-view .fa {
+          font-size: 1.3rem; }
+      .rent-gear .rent-gear-body .main-wrapper .views .table-view {
+        display: flex;
+        flex-direction: column; }
+        .rent-gear .rent-gear-body .main-wrapper .views .table-view .fa:first-child {
+          padding-top: 8px;
+          line-height: 0; }
+      .rent-gear .rent-gear-body .main-wrapper .views .nav-item {
+        margin-right: 8px; }
+        .rent-gear .rent-gear-body .main-wrapper .views .nav-item .nav-link {
+          padding: 0;
+          border: none; }
+        .rent-gear .rent-gear-body .main-wrapper .views .nav-item .active {
+          background-color: #F82462; }
+          .rent-gear .rent-gear-body .main-wrapper .views .nav-item .active .fa {
+            color: #ffffff; }
+    .rent-gear .rent-gear-body .main-wrapper .gear_list_view {
+      border: none;
+      background-color: #f3f3f3;
+      margin-bottom: 1.5rem;
+      position: relative;
+      transition: all 0.6s ease-in-out;
+      flex-direction: row; }
+      .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-img {
+        flex-basis: 25%;
+        display: flex;
+        align-items: center; }
+        .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-img .card-img-top {
+          padding: 10px;
+          height: 180px; }
+      .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body {
+        flex-basis: 75%;
+        padding: 0;
+        text-align: left;
+        display: flex; }
+        .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-center {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-center .card-title {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 12px; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-center .card-subtitle {
+            font-size: 0.7rem;
+            font-weight: 100;
+            margin-bottom: 15px;
+            color: #666; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-center .card-subtitle .stars {
+              color: #F82462; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-center .card-subtitle .fa-map-marker {
+              color: #F82462; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-center .card-text {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: #666; }
+        .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-right {
+          flex: 1;
+          border-left: 1px solid #ddd;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 10px; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-right .card-text {
+            margin: 0;
+            margin-bottom: 0.8rem; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-right .card-text .price {
+              font-size: 1.5rem;
+              font-weight: bold; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-right .buttons {
+            width: 100%;
+            text-align: center; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-right .buttons .cart {
+              width: 60%;
+              border-radius: 0;
+              background-color: #F82462;
+              border: none;
+              color: #ffffff;
+              margin-right: 10px; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_list_view .card-body .card-right .buttons .fav {
+              width: 20%;
+              border: 1px solid #FA6691;
+              background-color: #fff;
+              border-radius: 0;
+              color: #F82462; }
+      .rent-gear .rent-gear-body .main-wrapper .gear_list_view:hover {
+        transition: all 0.6s ease-in-out; }
+    .rent-gear .rent-gear-body .main-wrapper .gear_table_view {
+      border: none;
+      background-color: #f3f3f3;
+      margin-bottom: 1.5rem;
+      position: relative;
+      transition: all 0.6s ease-in-out;
+      flex-direction: row; }
+      .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-img {
+        flex-basis: 15%;
+        display: flex;
+        align-items: center; }
+        .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-img .card-img-top {
+          padding: 10px;
+          height: 100px; }
+      .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body {
+        flex-basis: 85%;
+        padding: 0;
+        text-align: left;
+        display: flex; }
+        .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-center {
+          flex: 3;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 10px; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-center .card-title {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 15px; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-center .card-subtitle {
+            font-size: 0.7rem;
+            font-weight: 100;
+            color: #666; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-center .card-subtitle .stars {
+              color: #F82462; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-center .card-subtitle .fa-map-marker {
+              color: #F82462; }
+        .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right {
+          flex: 2;
+          border-left: 1px solid #ddd;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .card-text {
+            text-align: center;
+            margin: 0;
+            flex: 1; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .card-text .price {
+              font-size: 1.5rem;
+              font-weight: bold; }
+          .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .buttons {
+            width: 100%;
+            text-align: center;
+            flex: 1;
+            box-sizing: border-box; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .buttons .cart {
+              width: 35%;
+              border-radius: 0;
+              border: 1px solid #FA6691;
+              background-color: transparent;
+              color: #F82462;
+              margin-right: 10px; }
+              .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .buttons .cart:hover {
+                background-color: #F82462;
+                color: #ffffff; }
+            .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .buttons .fav {
+              width: 35%;
+              border: 1px solid #FA6691;
+              background-color: transparent;
+              border-radius: 0;
+              color: #F82462; }
+              .rent-gear .rent-gear-body .main-wrapper .gear_table_view .card-body .card-right .buttons .fav:hover {
+                background-color: #F82462;
+                color: #ffffff; }
+      .rent-gear .rent-gear-body .main-wrapper .gear_table_view:hover {
+        transition: all 0.6s ease-in-out; }
+
 input:not([type]):focus:not([readonly]),
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
