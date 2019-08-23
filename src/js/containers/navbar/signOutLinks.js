@@ -9,8 +9,14 @@ const SignOutLinks = ( props ) => {
 
   const [dropdownOpen, setdropdownOpen] = useState(false);
   const toggle = () => setdropdownOpen(!dropdownOpen);
-  const { profile} = props;
-  console.log(profile.initials);
+  const { profile } = props;
+  const fullName = profile.fullName;
+  let firstName = '';
+  if(fullName != null)
+    firstName = fullName.split(" ");
+
+
+  console.log("navbar :", props);
   return (
     <ul className="right-menu">
       <li>
@@ -21,11 +27,11 @@ const SignOutLinks = ( props ) => {
       </li>
       <li className={`right ${dropdownOpen ? 'alpha' : ''}`}>
         <div className="drop-menu">
-          <div className="account">
+          <div className="account">{console.log(profile.image)}
             <img src={profile.image} alt='avatar' className="avatar" />
            
             
-            <p>Hello {profile.fullName} &nbsp; 
+            <p>Hello {firstName[0]} &nbsp; 
               {
                 dropdownOpen ? 
                   <i className="fas fa-angle-down" onClick={toggle}></i> :

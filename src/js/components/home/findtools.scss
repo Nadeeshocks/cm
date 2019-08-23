@@ -1,0 +1,19 @@
+.centered-content{
+    height : 100%;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;    
+    .title{
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+      .bold{
+        font-weight: bold;
+      }
+      .row{
+        justify-content:space-evenly;
+      }
+
+}

@@ -12,6 +12,7 @@ class SignUp extends Component {
     password: '',
     confirmPassword: "",
     phoneNumber: "",
+    firstName: "",
     fullName: "",
     gender: "",
     address: "",
@@ -26,11 +27,11 @@ class SignUp extends Component {
     this.props.signUp(this.state);
   }
   handleChange = e => {
-  
-    
-    this.setState({
-      [e.target.id]: e.target.value
-    })
+    const value =  e.target.value;
+    const id = e.target.id;
+      this.setState({
+        [id]: value
+      })
   }
 displayPicture(event){
   let reader=new FileReader();
@@ -96,72 +97,81 @@ reader.readAsDataURL(file);
             <div className="mb-2">Or</div>
             <Row>
               <Col sm="6">
-                <form>
-                  <div className="input-field">
+                <form className="theme-form" >
+                  <div className="field">
                     <input
                       id="email"
                       type="email"
                       className="validate"
+                      placeholder="Email"
                       value={email}
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="email">Email</label>
+                    <label for="email">Email</label>
                   </div>
-                  <div className="input-field">
+                  <div className="field">
                     <input
                       id="fullName"
                       type="text"
                       className="validate"
                       value={fullName}
+                      placeholder="Name"
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="fullName">Name</label>
+                    <label for="fullName">Name</label>
                   </div>
-                  <div className="input-field">
+                  <div className="field">
                     <input
                       id="phoneNumber"
                       type="text"
+                      placeholder="Phone-Number"
                       className="validate"
                       value={phoneNumber}
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="phoneNumber">Phone Number</label>
+                    <label for="phoneNumber">Phone Number</label>
                   </div>
-                  <div className="input-field">
+                  <div className="field">
                     <input
                       id="password"
                       type="password"
                       className="validate"
+                      placeholder="Password"
                       value={password}
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                   </div>
-                  <div className="input-field">
+                  <div className="field">
                     <input
                       id="confirmPassword"
                       type="password"
                       className="validate"
+                      placeholder="Confrim-Password"
                       value={confirmPassword}
                       onChange={this.handleChange}
                     />
-                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <label for="confirmPassword">Confirm Password</label>
                   </div>
-                  <div className="file-field input-field">
-                    <div style={{ background: 'transparent', boxShadow: 'none'}} className="btn">
-                      <span>Photo</span>
-                      <input id="input" type="file" onChange={
+                  <div className="file-field field mt-3">
+
+                      <input id="input" type="file" id="photo" className="image" onChange={
                         (event) =>{ this.displayPicture(event); }
                       }/>
-                       <img src={this.state.url} style={previewStyle}/>
-                    </div>
+                      <label for="photo" className="labelImage"> ADD PHOTO HERE </label>
+                      <img src={this.state.url} style={previewStyle}/>
+                      
+                
 
-                    <div className="file-path-wrapper">
+                    {/* <div className="file-path-wrapper">
                       <input className="file-path validate" type="text"
-                        placeholder="Upload file" />
-                    </div>
+                        placeholder="Upload file"
+                         />
+                         <label for="photo">Photo</label>
+                    </div> */}
+                    
                   </div>
-                  <button className="theme-btn theme-btn-primary w-100 mt-3" onClick={this.handleSubmit}>
+                  <button className="theme-btn theme-btn-primary mt-3" onClick={this.handleSubmit}>
                     Sign Up
                   </button>
                 </form>

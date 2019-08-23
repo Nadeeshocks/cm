@@ -1,0 +1,15 @@
+.flex-row{
+    align-items: unset;
+  .info-left-container{
+    flex : 1;
+    .theme-form-field{
+
+    }
+  }
+  // align-items: flex-start;
+  .info-right-container{
+    margin-left: 15px;
+    flex : 1;
+    @import './conditionRadioButton.scss';
+  }
+}
