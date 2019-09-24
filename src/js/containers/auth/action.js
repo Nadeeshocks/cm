@@ -30,14 +30,15 @@ export const signUp = (newUser) => (dispatch, getState, { getFirebase, getFirest
 
   firebase.auth().createUserWithEmailAndPassword(
     newUser.email,
-    newUser.password
+    newUser.password,
   ).then((resp)=>{
     return firestore.collection('users').doc(resp.user.uid).set({
       fullName: newUser.fullName,
       phoneNumber: newUser.phoneNumber,
       address: newUser.address,
       initials: newUser.fullName[0],
-      image:newUser.url
+      image:newUser.url,
+      email: newUser.email
     })
   }).then(()=>{
     dispatch({ type : ACTIONS.REGISTRATION_SUCCESS});

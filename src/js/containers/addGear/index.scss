@@ -4,10 +4,19 @@
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
+
+  .add-gear-head
+  {
     
-    .add-gear-progress {
+  }
+  .add-gear-body{
+    // width: 800px;
+    min-width: 800px;
+    // overflow: hidden;
+    // width: 500px;
+    margin-bottom: 10px;
+    .add-gear-progress{
       display: flex;
-      width: 500px;
       margin-bottom: 15px;
       .add-gear-progress-item {
         display: flex;
@@ -29,8 +38,13 @@
           opacity: 1;
         }
   
+
         &:nth-child(n+2):before {
           content: '';
+=======
+        &:nth-child(n + 2):before {
+          content: "";
+>>>>>>> 9c45f6c68816ebbf966e858fcf66afce4b847027
           position: absolute;
           width: 100%;
           height: 1px;
@@ -40,6 +54,7 @@
         }
       }
     }
+
     .flex-row {
       align-items: flex-start;
   
@@ -209,5 +224,121 @@
         }
       }
     }
-}
+
   
+    // info 
+    // .theme-form{ 
+      // .add-gear-info{
+        @import '../../components/addGear/info.scss';
+      // }
+    // }
+    // photo
+
+    @import '../../components/addGear/photos.scss';
+
+    // address 
+
+    // price 
+
+    .add-gear-price
+    {
+      display: flex;
+      margin-left: 15px;
+      & > div {
+        margin-left: 15px;
+      }
+      .gear-left-container{
+
+        .price-type-tabs {
+          input {
+            display: none;
+          }
+      
+          label {
+            color: orange;
+            padding: 3px 10px;
+            margin: 2px;
+            border: 1px solid lightgray;
+            display: inline-block;
+            font-size: 12px;
+      
+            &.active {
+              color: white;
+              background-color: #00f077;
+            }
+          }
+        }
+
+        .gear-carousel {
+          margin-top: 15px;
+          width: 300px; 
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .gear-middle-container{
+        width: 250px;
+        .flex-row{
+          .gear-accessories-address{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid lightgray;
+            .theme-text-small{
+              .text-gray{
+                
+              }
+            } 
+          }
+        } 
+      }
+      .gear-right-container {
+        @import '../../components/addGear/price.scss';
+      }
+    }
+
+
+  }
+  .flex-row{
+    .buttons-container{
+      //buttons and span heres
+    }
+  }
+
+  .buttons-container {
+    display: flex;
+    button {
+      margin : 5px;
+      width: auto;
+      min-width: auto;
+    }
+
+    .theme-btn-primary {
+      flex: 1;
+    }
+  }
+}
+
+
+// forms 
+
+.theme-form {
+  margin: 15px 0;
+
+  .theme-form-field {
+    margin: 8px 0px;
+    display: flex;
+    // width: 400px;
+  }
+
+  input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    position: inherit;
+    margin: 0;
+    margin-right: 5px;
+  }
+}
+

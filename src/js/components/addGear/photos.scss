@@ -1,0 +1,39 @@
+.add-gear-photos
+    {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid lightgray;
+      min-height: 300px;
+    //   width: 100%;
+      // margin: 15px;
+      padding: 15px;
+      .add-gear-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .add-gear-image,
+        .add-gear-addimage {
+          height: 100px;
+          width: 100px;
+          border: 1px solid lightgray;
+          margin: 0 10px 10px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          input{
+            display:none
+          }
+          img {
+            width: 100%;
+          }
+        }
+    
+        .add-gear-addimage {
+          i {
+            font-size: 30px;
+            color: $primary-color;
+          }
+        }
+      }
+    }

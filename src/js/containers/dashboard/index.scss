@@ -1,0 +1,323 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+    .dashboard-head{
+        padding-left: 15%;
+        background-color: #e9ecef;
+        display: flex;
+        flex-direction: column;
+        flex: 150px;
+        .user-info{
+            flex:75%;
+            display: flex;
+            flex-direction: row;
+            margin-top : 30px;
+            img{
+            // margin: 15px 0px 15px 0px; 
+            width: 70px;
+            height: 70px;
+            border-radius: 50px;
+            }
+        .user-details{
+            display: flex;
+            flex-direction: column;
+            margin-left : 20px; 
+            // align-items: center;
+            h4{
+
+            }
+            .user-contact{
+                    span{
+                        font-size: 10px;
+                    }
+                    p{
+                        font-style: bold;
+                        font-size: 10px; 
+                    }
+                    display: flex;
+                    flex-direction: row;
+                    .user-contact-phone{
+                        margin-left: 20px;
+                    }
+            }
+            }      
+        }
+
+        .dashboard-navbar{
+            button{
+                background: unset;
+                border: unset;
+                text-decoration: none;
+                &.active {
+                    border-bottom: 3px solid red;
+                }
+            }
+        }
+
+    }
+    .dashboard-body{
+        flex: 250px;
+        justify-content: center;
+        display: flex;
+        .dashboard-content{
+            margin-top: 10px;
+            width: 65%;
+           .chart-content{
+                background: #faf8f9;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .main-box{
+                    margin: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    .BarChart{
+                        flex: 75%;
+                    }
+                    .left-box{
+                        margin: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        .box1{
+                            flex:30%;
+                            display: flex;
+                            background: white;  
+                            border-left: 5px solid red;
+                            margin-bottom: 10px;
+                            padding: 15px;
+                            .value{   
+                                display: block; 
+                                font-weight: bold;
+                                font-size: 30px;
+                            }
+                            .lable{
+                                display: block; 
+                                font-size:10px;
+                            }
+                        }
+                        .box2{
+                            flex:30%;
+                            display: flex;
+                            background: white;  
+                            border-left: 5px solid blue;
+                            padding: 15px;
+                      
+                            margin-bottom: 10px;
+                            .value{
+                                display: block;
+                                font-weight: bold; 
+                                font-size:30px;
+                            }
+                            .lable{
+                                font-size:10px;
+                            }
+                        }
+                        .box3{
+                            flex:30%;
+                            display: flex;
+                            background: white;  
+                            border-left: 5px solid green;
+                            padding: 15px;
+                       
+                            margin-bottom: 10px;
+                            .value{
+                                font-weight: bold;
+                                display: block; 
+                                font-size: 30px;
+                            }
+                            .lable{
+                                font-size:10px;
+                            }
+                        }
+                    }
+                } 
+                .bottom-box{
+                    margin: 10px;
+                    display: flex;
+                    flex-direction: row;
+        
+                    .total-listing{  
+                        background: white;          
+                        flex:30%;
+                        margin-left: 10px;
+                        padding: 15px;
+                        .value{
+                            font-weight: bold; 
+                            font-size: 2rem;
+                        }
+                        .lable{
+                            display: block;
+                            
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .out-on-rent{
+                        background: white;
+                        flex: 30%;
+                        margin-left: 10px;
+                        padding: 15px;
+                        .value{
+                            font-weight: bold; 
+                            font-size: 2rem;
+                        }
+                        .lable{
+                            display: block;
+                            
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .available{
+                        background: white;
+                        padding: 15px;
+                        flex: 30%; 
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        .value{
+                            font-weight: bold; 
+                            font-size: 2rem;
+                        }
+                        .lable{
+                            display: block;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+           }
+
+           .account-details{
+            background: #faf8f9;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding : 20px;
+                .user-details{
+                    margin-right: 20px;
+                    flex:1;
+                   .user-info{
+                    background: white;
+                    padding: 20px; 
+                    margin-bottom: 20px;
+                   }
+                   .change-password{
+                    background: white;
+                    padding: 20px; 
+                   }
+                    span{
+                        font-size: 10px;
+                    }
+                    input{
+                        text-decoration: none;
+                        display: block;
+                        width:100%;
+                        margin-bottom:10px;
+                        border:unset;
+                        border-bottom: 1px solid #e0e0e0;
+                        font-size:15px;
+                        &placeholder{
+                            font-size: 15px;
+                        }
+                    }
+                    button{
+                        width:100%;
+                        background: #f82462;
+                        border:unset;
+                        margin-top:10px;
+                        color: white;
+                        font-size: 10px;
+                        height: 30px;
+                    }
+                    
+                   
+                }
+                .payment-meathod{
+                    flex:1;
+                    background: white;
+                    // margin:10px;
+                    padding: 10px; 
+                }
+
+                h6{
+                    font-weight: 900;
+                    color:#a4a4a4;
+                }
+           }
+           // CSS FOR LISTING
+           .content{
+            flex-direction: column;
+            width: 100%;
+            padding : 20px;
+                .header{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    // padding:20px;
+                    h4{
+        
+                        
+                    }
+                    button{
+                        background: #f82462;
+                        border: unset;
+                        color: white;
+                        padding: 9px;
+                        font-size: 13px;
+                        flex-basis: 80px;
+                        flex-shrink: 1;   
+                    }
+                }
+                .body{
+                    // background: #faf8f9;
+                    background :#faf8f9;
+                    margin:10px;
+                    padding: 20px;
+                    .body-content{
+                        // margin:20px;
+                        background: #ffffff;
+                        width: 100%;
+                        table{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            padding : 20px;
+                            thead{
+                                tr{
+                                    display: flex;
+                                    justify-content: space-around;
+                                    th{ 
+                                        font: unset;
+                                        font-size: 13px;
+                                        width: 100px
+                                    }
+                                }
+                            }
+                            tbody{
+                                tr{
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-around;
+                                    margin:0px;
+                                    padding:0px;
+                                    td{
+                                        margin-top:5px;
+                                        font: unset;
+                                        font-size: 13px;
+                                        width: 100px;
+                                        img{
+                                            margin:0px;
+                                            padding:0px;
+                                            width: 50px
+                                        }
+                                    }
+                                }
+                            }    
+                        }
+                    }
+                }
+           }
+
+        }
+    }
+}

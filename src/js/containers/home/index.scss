@@ -48,11 +48,17 @@
         margin-right: 5px;
       }
     }
-    .theme-form{
+
+    .theme-form{ 
       display: flex;
       margin-top: 30px;
       align-items: flex-end;
-      max-width: 800px;
+      max-width: 500px;
+
+      label {
+        background-color: #F82462;
+        color: white;
+      }
 
       button {
         width: auto;
@@ -80,12 +86,33 @@
       flex: 1;
       margin-right: 15px;
       position: relative;
+
+      #locationSearch{
+        background-color: #F82462;
+        border-bottom: 1px solid #ffffff;
+        color : #ffffff;
+      }
+      ::placeholder { 
+        color:  #ffffff;
+  
+      }
+
     }
 
     .search-input {
       flex: 1.5;
       position: relative;
       margin-right: 15px;
+
+      #gearSearch{
+        background-color: #F82462;
+        border-bottom: 1px solid #ffffff;
+        color : #ffffff;
+      }
+      ::placeholder { 
+        color:  #ffffff;
+  
+      }
     }
 
     .search-suggestions {
@@ -121,6 +148,10 @@
     .stories{
       background-color: $gray-light;
       padding: 3rem 0;
+      .Container{
+        margin-bottom: 20px;
+      }
+
     }
     .payments{
       img{
@@ -148,10 +179,14 @@
   button{
     display: block;
   }
+
   #camera{
     background-image: url('/images/Icons/catogories/1 (12).jpg');
   }
-  #computer_electronic{
+  #cameras{
+    background-image: url('/images/Icons/catogories/1 (12).jpg');
+  }
+  #ComputerElectronics{
       background-image: url('/images/Icons/catogories/1 (13).jpg');
     }
   #drones{
@@ -160,6 +195,7 @@
   #lenses{
     background-image: url('/images/Icons/catogories/1 (15).jpg');
   }
+
   #lighting{
     background-image: url('/images/Icons/catogories/1 (16).jpg');
   }
@@ -175,7 +211,23 @@
   #studio_spaces{
     background-image: url('/images/Icons/catogories/1 (20).jpg');
   }
-  #office_spaces{
+ 
+  #lights{
+    background-image: url('/images/Icons/catogories/1 (16).jpg');
+  }
+  #Audio{
+    background-image: url('/images/Icons/catogories/1 (17).jpg');
+  }
+  #TripodsStabilizationRigs{
+    background-image: url('/images/Icons/catogories/1 (18).jpg');
+  }
+  #CameraAccessories{
+    background-image: url('/images/Icons/catogories/1 (19).jpg');
+  }
+  #StudioSpaces{
+    background-image: url('/images/Icons/catogories/1 (20).jpg');
+  }
+  #OfficeSpaces{
     background-image: url('/images/Icons/catogories/1 (21).jpg');
   }
   #others{
@@ -206,12 +258,14 @@
     justify-content: center;
     flex-direction: column;
   }
-  #camera{
+
+  #cameras{
     background-image: url('/images/Icons/catogories/1 (1).jpg');
     background-repeat:no-repeat;
     background-position: center;
   }
-   #computer_electronic{
+
+   #ComputerElectronics{
     background-image: url('/images/Icons/catogories/1 (2).jpg');
     background-repeat:no-repeat;
     background-position: center;        }
@@ -225,32 +279,37 @@
     background-repeat:no-repeat;
     background-position: center;
   }
-  #lighting{
+
+  #lights{
     background-image: url('/images/Icons/catogories/1 (5).jpg');
     background-repeat:no-repeat;
     background-position: center;
   }
-  #audio{
+
+  #Audio{
     background-image: url('/images/Icons/catogories/1 (6).jpg');
     background-repeat:no-repeat;
     background-position: center;
   }
-  #tripods_stabilization_rigs{
+
+  #TripodsStabilizationRigs{
     background-image: url('/images/Icons/catogories/1 (7).jpg');
     background-repeat:no-repeat;
     background-position: center;
   }
-  #camera_accessories{
+
+  #CameraAccessories{
     background-image: url('/images/Icons/catogories/1 (8).jpg');
     background-repeat:no-repeat;
     background-position: center;
   }
-  #studio_spaces{
+
+  #StudioSpaces{
     background-image: url('/images/Icons/catogories/1 (9).jpg');
     background-repeat:no-repeat;
     background-position: center;
   }
-  #office_spaces{
+  #OfficeSpaces{
     background-image: url('/images/Icons/catogories/1 (10).jpg');
     background-repeat:no-repeat;
     background-position: center;
@@ -301,7 +360,6 @@
   width: 100%;
   flex-wrap: wrap;
 }
-
 @media(max-width:500px){
   .home{
     text-align: center;

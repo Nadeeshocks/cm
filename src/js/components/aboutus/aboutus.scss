@@ -1,0 +1,79 @@
+.about-us{
+    width:100%;
+    .about-us-head{
+      background-color: $primary-color;
+      padding :2.6rem 0;
+      margin-bottom: 3rem;
+      .breadcrumb{
+        margin: 0;
+        padding-left:0.5rem;
+        margin-bottom: 4rem;
+        color:$white;
+        .breadcrumb-item{
+          &::before{
+            color:$white;
+          }
+        }
+        .active{
+          color:$white;
+          font-weight: 800;
+        }
+      }
+      h1{
+        color:$white;
+        margin-bottom: 2rem;
+      }
+      h4.intro ,p{
+        color:$white;
+        .bold{
+          font-weight: 700;
+        }
+      }
+      p.bread-crums {
+        padding-top:4rem;
+      }
+      p.about-desc{
+        width:80%;
+        padding: 0;
+        letter-spacing: 1px;
+        line-height: 24px;
+      }
+      .about-cm{
+        margin-left:-20px;
+      }
+      @media(max-width: 676px){
+        .about-cm{
+          margin: 0;
+          width: 100%;
+          padding-top:1rem;
+          text-align: center;
+        }
+      }
+    }
+    .about-us-body{
+      .team-members{
+        margin-bottom: 4rem;
+        h2.our-team{
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+        .card{
+          .card-title{
+            bottom: 15%;
+            color: $white;
+          }
+          .card-text{
+            bottom: 10%;
+          }
+        }
+        
+      }
+      .press{
+        margin-bottom: 4rem;
+        h2.press-title{
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }

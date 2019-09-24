@@ -1,0 +1,48 @@
+.FAQ{
+    .FAQ-head{
+      margin: 30px 0;
+      text-align: center;
+      nav{
+        display: inline-flex;
+      }
+    }
+    .FAQ-body{
+      margin-bottom: 100px;
+      .accordion{
+        border :none;
+        .accordion__item{
+          border :none;
+          .accordion__title{
+            background-color: transparent !important;
+            border-bottom :1px solid #eee; 
+            &:focus{
+              outline: none;
+            }
+            h3{
+              font-size: 16px;
+              color :$secondary-light-color;
+            }
+          }
+          .accordion__body{
+            p{
+              color: #6a6a6a;
+            }
+          }
+        }
+      }
+      .email-form{
+          background-color: #faf8f9;
+          text-align: center;
+          justify-content: center;
+          padding: 50px;
+          margin-top: 50px;
+          .Row{
+              margin: 15px;
+              padding: 15px;
+              .Col{
+               
+              }
+          }
+      }
+    }
+  }

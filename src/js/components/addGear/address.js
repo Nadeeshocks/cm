@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Dropdown, Form, DropdownToggle, DropdownMenu,
     DropdownItem, Input, Label, Carousel, CarouselItem, CarouselControl,
     CarouselIndicators, CarouselCaption, InputGroup, InputGroupAddon } from 'reactstrap';
-import CustomInput from './customInput';
+import CustomInput from '../customInput';
 
 export default props => {
     return (

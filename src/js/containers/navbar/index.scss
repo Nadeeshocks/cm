@@ -6,7 +6,7 @@
   justify-content: space-between;
   .logo{
     flex : 1;
-    text-align: center;
+    text-align: right;
     img{
       width :160px;
     }
@@ -99,7 +99,7 @@
     }
   }
   .theme-nav-right {
-    flex : 1;
+    flex : 2 1;
     ul.right-menu{
       position: relative;
       flex : 1;
@@ -168,6 +168,7 @@
       align-items: center;
       padding: 0 25px;
       margin: 0;
+      list-style: none;
       li{
         margin: 0 10px;
       }

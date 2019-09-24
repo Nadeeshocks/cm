@@ -1,16 +1,21 @@
-const initState = {}
+import producer from 'immer'
 
-const projectReducer = (state = initState, action) => {
-  switch (action.type) {
-    case 'CREATE_GEAR_SUCCESS':
-      console.log('create gear success');
-      return state;
-    case 'CREATE_GEAR_ERROR':
-      console.log('create gear error');
-      return state;
-    default:
-      return state;
-  }
+const initState = {
+    status : null
+}
+
+const addGear_reducer = (state = initState, action) => {
+    return producer( state, draft => {
+        switch (action.type) {
+            case 'CREATE_GEAR_SUCCESS':
+                draft.status = true
+                break; 
+            case 'CREATE_GEAR_ERROR':
+                draft.status = false
+                break; 
+        }
+    })
+        
 };
 
-export default projectReducer;
+export default addGear_reducer;s

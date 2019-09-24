@@ -12,6 +12,14 @@ import GearDetail from '../components/geardetail';
 import Cart from '../components/cart';
 import Checkout from '../containers/rentGear/checkout';
 import Favourites from '../components/favourite/favourite'
+import ListGear from '../containers/listGear/index';
+import AddGear from '../containers/addGear/index';
+import UpdateGear from '../containers/updateGear/index'
+import About from '../components/aboutus/aboutus'
+import Partners from '../components/partners/index';
+import FAQ from '../containers/FAQ/index';
+import ForgetPassword from '../containers/forgetPassword/index';
+
 export default (
   <Switch>
     <Route exact path="/" component={Home} />
@@ -27,3 +35,12 @@ export default (
     {/* <Route path="/gear/:id" component={ViewGear} /> */}
     <Route path="/cart" component={Cart} />
   </Switch>);
+    <Route path="/listgear" component={ListGear} />
+    <Route path="/addgear" component={AddGear} />
+    <Route path="/updategear/:id" component={UpdateGear} />
+    <Route path="/aboutus" component={About} />
+    <Route path="/partners" component={Partners} />
+    <Route path="/faqs" component={FAQ} />
+    <Route path="/forgotpassword" component component={ForgetPassword} />
+  </Switch>
+  );

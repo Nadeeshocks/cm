@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class ThemeNavbar extends React.Component {
+
   render(){
     return (
       <div className="theme-navbar">
