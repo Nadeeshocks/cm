@@ -10,6 +10,7 @@ import accountDetailReducer from '../containers/dashboard/accountdetails/reducer
 import mylistingGears from '../containers/dashboard/mylisting/reducer'
 import myRentalGears from '../containers/dashboard/myRentals/reducer'
 import UserDetails from '../containers/dashboard/reducers'
+import forgerPassword  from '../containers/forgetPassword/reducer'
 
 
 const rootReducer = combineReducers({
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
     accountDetail : accountDetailReducer,
     rentedGears : myRentalGears,
     myGears : mylistingGears,
-    user : UserDetails
+    user : UserDetails,
+    forgerPassword : forgerPassword
 });
 
 export default rootReducer;

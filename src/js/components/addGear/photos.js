@@ -11,7 +11,7 @@ export default class photos extends Component {
 
     componentDidMount(){
         this.addImageRef.current.onclick = () => {
-            console.log("in mount",this.addImageRef)
+
             this.inputElement.click();
         }       
     }

@@ -1,7 +1,7 @@
 import producer from 'immer'
 
 const intialState = {
-    gears : []
+    gears : null
 }
 
 export default ( state = intialState, action) => {
@@ -10,6 +10,7 @@ export default ( state = intialState, action) => {
         {
             case "LISTING GEARS":
                 draft.gears = action.payload;
+                break;
         }
 
     })

@@ -1,0 +1,58 @@
+.theme-2{
+    width: auto;
+    height: 270px;
+    .wrraper{
+      background-color: $primary-color-alpha;
+      height: 100%;
+    img{
+      height: 100%;
+    }
+    .overlay{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: $primary-color-alpha;
+      padding: 1rem 3rem;
+      padding-right: 1rem;
+      img{
+        position: absolute;
+        left: -20px;
+        top: -5px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      .card-text{
+        display: flex;
+        .views{
+          margin-left: auto;
+        }
+      }
+    }
+    }
+    &:hover{
+      .wrraper{
+        .overlay{
+          background-color: $primary-color;
+        }
+      }
+    }
+}
+.card-footer{
+    width: 98%;
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    border-left: 2px solid #f8246224;
+    border-bottom: 2px solid #f8246224;
+    margin-top: 20px;
+    &:last-child{
+      border-radius: 0;
+      p{
+        color:$secondary-light-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+      }
+    }
+}

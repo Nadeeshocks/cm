@@ -15,8 +15,6 @@ const SignOutLinks = ( props ) => {
   if(fullName != null)
     firstName = fullName.split(" ");
 
-
-  console.log("navbar :", props);
   return (
     <ul className="right-menu">
       <li>
@@ -27,7 +25,7 @@ const SignOutLinks = ( props ) => {
       </li>
       <li className={`right ${dropdownOpen ? 'alpha' : ''}`}>
         <div className="drop-menu">
-          <div className="account">{console.log(profile.image)}
+          <div className="account">
             <img src={profile.image} alt='avatar' className="avatar" />
            
             

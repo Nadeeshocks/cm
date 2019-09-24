@@ -71,7 +71,6 @@ export const updateUser = (fullName, phoneNumber) => {
         }
         catch(e)
         {
-            console.log("error : " ,e);
             dispatch({
                 type  : "UPDATEUSERSTATUS",
                 payload : "failed to Update"

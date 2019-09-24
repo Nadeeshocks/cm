@@ -1,14 +1,23 @@
 
-const getGear_reducer = (state = {} , action) => {
+import producer from 'immer'
 
-    switch(action.type){
-        case 'getGears' :
-            return action.payload
-        case 'delGear' : 
-            return action.payload
-        default:
-            return state
-    }
+const intialState = {
+    gears : null,
+    status : null
+}
+
+const getGear_reducer = (state = intialState , action) => {
+    return producer(state,draft  => {
+            switch(action.type){
+                case 'getGears' :
+                    draft.gears = action.payload
+                    break;
+                case 'delGear' : 
+                    draft.status = action.payload
+                    break;
+            }
+        }
+    )    
 }
 
 export default getGear_reducer

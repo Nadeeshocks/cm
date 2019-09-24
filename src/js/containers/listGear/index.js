@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+import Empty from '../../components/empty/empty'
 
 import {
   Container, Row, Col, Breadcrumb, Table,
@@ -18,12 +19,10 @@ class ListGear extends Component {
   componentDidMount() {
     this.props.GetGears();
   }
-  componentDidUpdate() {
-    //do something about this 
-    this.props.GetGears();
-  }
 
   render() {
+    const { gears , status  } = this.props.gearCRUD;
+    console.log("gears in index : ", gears);
     return (
       // <div> 
       //     <h1>List Gear</h1>
@@ -53,7 +52,9 @@ class ListGear extends Component {
           <Container>
             <div className="wrraper">
               <div className="table-responsive">
-                <Table className="listing-data-slice" >
+              { gears == null ? <h2>Loading Please Wait </h2> 
+              : gears.length == 0 ? < Empty /> :
+              <Table className="listing-data-slice" >
                   <thead>
                     <tr className="text-muted theme-text-bold">
                       <th></th>
@@ -65,9 +66,9 @@ class ListGear extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <ListItem gears={this.props.gearCRUD} onDelete={id => this.props.OnDel(id)} />
+                    <ListItem gears={ gears } onDelete={id => this.props.OnDel(id)} />
                   </tbody>
-                </Table>
+               </Table> }
                 {/* <Pagination aria-label="Page navigation example">
                       <PaginationItem disabled={currentPage <= 0}>
                         <PaginationLink

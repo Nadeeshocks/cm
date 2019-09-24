@@ -20,7 +20,7 @@ class AddGear extends Component {
     super();
     this.progressSteps = ["Info", "Photo", "Address", "Price"];
     this.state = {
-          progressStep: 0,
+          progressStep: 3,
           dropdownOpen: false,
           isGearAdded: false,
           categoryName : 'Categories',
@@ -30,8 +30,8 @@ class AddGear extends Component {
           url : [],
           Images : [],
           isKit : '',
-          ReplacementAmount : '',
-          PricePerDay : '',
+          ReplacementAmount : 0,
+          PricePerDay : 0,
           Brand : '', 
           Model : '', 
           Description : '', 
@@ -39,7 +39,7 @@ class AddGear extends Component {
           City : '', 
           Region : '', 
           Address : '', 
-          PostalCode :''
+          PostalCode : 0
     }
     this.renderGearAdded =this.renderGearAdded.bind(this);
     this.handlechips = this.handlechips.bind(this);
@@ -59,6 +59,7 @@ class AddGear extends Component {
   {
     const name = e.target.name;
     const value = e.target.value
+    console.log(" data " , typeof value )
     if(e.target.type == 'checkbox')
     {
 
@@ -214,12 +215,10 @@ class AddGear extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log("data :  ", this.state)
     if(this.validate())
     {
       this.props.CreateGear(this.state);
-      // this.props.history.push('/');
-      this.state.isGearAdded = this.props.addgearstatus;
-      console.log("submit ", this.state.isGearAdded);
     }  
   }
 
@@ -227,11 +226,11 @@ class AddGear extends Component {
   {
     return <RenderGearAdded pstate={this.state} />
   }
-  render() {
 
-   if(this.state.isGearAdded)
+  render() {
+  
+    if(this.props.addgearstatus)
     {
-      console.log("render gear status ",this.state.isGearAdded);
       return this.renderGearAdded();
     }
     else{
@@ -282,7 +281,7 @@ const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
     catagories: state.firestore.ordered.catagories,
-    addgearstatus: state.gearStatus
+    addgearstatus: state.gearStatus.status
   }
 }
 

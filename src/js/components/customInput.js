@@ -14,6 +14,7 @@ export default class CustomInput extends Component {
             type = {type}
             required = { required || false }
             onChange={this.props.onChange}
+            // onChange={(e)=> console.log(e.target.value)}
             value={value}
             className="form-control"
         />

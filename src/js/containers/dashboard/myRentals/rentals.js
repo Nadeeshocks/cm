@@ -13,12 +13,12 @@ class Rentals extends Component {
     }
 
     render() {
-        console.log( "ya maira r gear", this.props.rentedGears);
+    
         return (
             <Table  onClick={() => { console.log("Clciked from rentals") }} 
                     title="MY RENTALS" 
                     tableHead = {this.TableHead}
-                    gears = { [] }
+                    gears = { this.props.rentedGears }
                      />
         )
     }
@@ -27,7 +27,7 @@ class Rentals extends Component {
 
 const mapStateToProps = state => {
     return {
-        rentedGears : state.rentedGears
+        rentedGears : state.rentedGears.gears
     }
 }
 

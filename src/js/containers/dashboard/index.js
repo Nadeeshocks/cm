@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
-
 import AccountDetails from './accountdetails/accountdetails';
 import Listing from './mylisting/listing'
 import Rentals from './myRentals/rentals'
@@ -48,7 +47,7 @@ class Dashboard extends Component {
   render() {
     // Route Gaurding
     const user = this.props.user.users;
-    console.log("auth in render ", user)
+
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/login' />
 

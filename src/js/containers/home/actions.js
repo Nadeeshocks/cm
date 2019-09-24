@@ -4,7 +4,7 @@ export const getGears = ( category ) =>  async (dispatch, getState , { getFirest
 
     const firestore = getFirestore();
     const querySnapshot = await firestore.collection("allgears").where("categoryName", "==", category).get();
-    console.log("ya data" , querySnapshot.doc );
+
     
     // .then(function(querySnapshot) {
     //     querySnapshot.forEach(function(doc) {
@@ -20,5 +20,18 @@ export const getGears = ( category ) =>  async (dispatch, getState , { getFirest
     //     payload : query
     // })
 
-
 }
+
+export const getNewArrivals = () => async (dispatch,getState ,{ getFirestore }) => {
+
+    const firestore = getFirestore();
+    const gears = await firestore.collection("allgears").orderBy("createdAt" ,"desc").get();
+    dispatch({ type : "NEW_ARRIVALS" , payload: gears.docs })
+}
+
+export const getStories = () => async (dispatch,getState ,{ getFirestore }) => {
+    const firestore = getFirestore();
+    const gears = await firestore.collection("stories").get();
+    dispatch({ type : "STORIES" , payload: gears.docs })
+}
+

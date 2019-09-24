@@ -1,11 +1,11 @@
 export const getCatagories = () => {
     return async (dispatch, getState ,{ getFirestore }) => {
-        console.log("here we are");
+   
         const firestore = getFirestore();
         const query = firestore.collection("catagories");
         try{
             const res = await query.get().docs.data();
-            console.log("res", await res );
+          
             // dispatch( { type : "catagories", payload : await res.data } )
         }
         catch(e)

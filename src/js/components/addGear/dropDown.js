@@ -12,7 +12,7 @@ export default props => {
         <DropdownMenu right>
         {
             props.cats && props.cats.map((ele, index)=>{
-                return <DropdownItem key={index} onClick={ ()=>{ props.onChangeCat(ele); console.log("sent", ele) }} > {ele.cat_name} </DropdownItem>
+                return <DropdownItem key={index} onClick={ ()=>{ props.onChangeCat(ele);  }} > {ele.cat_name} </DropdownItem>
             })
         }
         </DropdownMenu>

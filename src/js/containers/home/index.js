@@ -2,30 +2,44 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import CatagoryList from '../../components/catagoryList/index';
-import FindTools from '../../components/home/findtools'
-import { getGears } from './actions'
+import { getGears, getNewArrivals, getStories } from './actions'
+import { Container, Row, Col } from 'reactstrap';
+import Search from '../../components/home/search'
+import Catagory from '../../components/home/categories'
+import NewArrivals from '../../components/home/newArrivals'
+import Stories from '../../components/home/stories'
 // import catagoryList from '../../components/catagoryList/index';
 
 class Home extends Component {
 
   getGears = catagory => {
-    this.props.getGears( catagory )
+    this.props.getGears(catagory)
+  }
+
+  componentDidMount = () => {
+    this.props.getNewArrivals();
+    this.props.getStories();
   }
 
   render() {
-    const { catagories, filterd_gears } = this.props;
-    // if( this.props.filterd_gears != null )
-    //   console.log("index : " , this.props.filterd_gears.data())
+    const { catagories, newArrivals,stories } = this.props;
+ 
     return (
-      // projects && projects.map();
-      // React, Redux & Firebase App Tutorial #20 - Project Details Data for Rent Gear.
       <div className="home">
         <div className="home-head">
-          <FindTools catagories={catagories} getGears={this.getGears} gears={filterd_gears}/>
+          <Search catagories={catagories} />
         </div>
         <div className="home-body">
-          <CatagoryList catagories={catagories} />
+          <Container>
+            <Catagory catagories={catagories} />
+            <div className="clearfix mb-4"></div>
+          </Container>
+
+          <NewArrivals newArrivals={ newArrivals } />
+          <Stories stories={ stories } />
+          <div className="payments">
+            <img src="/images/temp.jpg" alt="" />
+          </div>
         </div>
       </div>
     );
@@ -35,12 +49,13 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   return {
     catagories: state.firestore.ordered.catagories,
-    filterd_gears : state.home.gear
+    newArrivals: state.home.gear,
+    stories : state.home.stories
   }
 }
 export default compose(
   firestoreConnect([
     { collection: 'catagories' }
   ]),
-  connect(mapStateToProps, { getGears })
+  connect(mapStateToProps, { getGears, getNewArrivals, getStories })
 )(Home);

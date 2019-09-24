@@ -289,21 +289,26 @@
                                     th{ 
                                         font: unset;
                                         font-size: 13px;
+                                        width: 100px
                                     }
                                 }
                             }
                             tbody{
                                 tr{
                                     display: flex;
+                                    flex-direction: row;
                                     justify-content: space-around;
                                     margin:0px;
                                     padding:0px;
                                     td{
+                                        margin-top:5px;
                                         font: unset;
                                         font-size: 13px;
+                                        width: 100px;
                                         img{
                                             margin:0px;
                                             padding:0px;
+                                            width: 50px
                                         }
                                     }
                                 }

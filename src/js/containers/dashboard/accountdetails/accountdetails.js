@@ -45,7 +45,7 @@ class AccountDetails extends Component {
     onTextInput = (e) => {
         this.setState({
             [e.target.id]: e.target.value
-        }, () => { console.log("state", this.state) }
+        }
         )
     }
 

@@ -5,7 +5,7 @@ export default props => {
     if( Array.isArray(props.gears) ){
         return props.gears.map((doc)=>{
           return <tr>
-                    <td><img src={doc.data().url}/></td>
+                    <td><img src={doc.data().url} className="gear-img" /></td>
                     <td>{doc.data().Brand}</td>
                     <td>{doc.data().Model}</td>
                     <td>{doc.data().PricePerDay}</td>

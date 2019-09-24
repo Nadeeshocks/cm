@@ -12,19 +12,19 @@ class Listing extends Component {
     TableHead = [ " ","Name & Category" , "Rental Period" , "Client", "Price per day" , "Amouth" ];
     render()
     {
-        console.log( "ya maira l gear", this.props.myGears);
+        const gears = this.props.myGears.gears;
         return(       
-            <Table  onClick={() => { console.log("Clciked from Listing")}} 
-                    title="MY LISTING"
-                    tableHead = {this.TableHead} 
-                    gears = { [] } />
+           <Table onClick={() => { console.log("Clciked from Listing")} } 
+                title="MY LISTING"
+                tableHead = { this.TableHead } 
+                gears = { gears } />
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-        myGears : state.myGears
+        myGears : state.myGears,
     }
 }
 

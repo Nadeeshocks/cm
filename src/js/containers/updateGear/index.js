@@ -168,7 +168,7 @@ class UpdateGear extends Component{
 
     render()
     {
-        console.log("props", this.props);
+
         if( this.state.updateGear == true )
         {   
             return <h1>Updated Bro</h1>
