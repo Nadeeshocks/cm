@@ -1,0 +1,75 @@
+.list-gear{
+    .list-gear-head{
+      padding-top : 3rem;
+      margin-bottom: 2rem;
+      .theme-page-title{
+        margin-bottom: 0;
+      }
+    }
+    .list-gear-body{
+      margin: 0 0 3rem;
+      .wrraper{
+        background-color: $gray-light;
+        padding:3rem;
+        text-align: center;
+        .listing-data-slice{
+            background-color: $white !important;
+            text-align: left;
+            th{
+              padding: 1.7rem 1rem;
+              font-weight: bold;
+            }
+            td{
+              padding: .5rem 1rem;
+              border-top: none !important;
+              vertical-align: middle;
+              p{
+                font-size: 14px;
+              }
+              .gear-img{
+                width:70%;
+              } 
+              .close{
+                display: inline-block;
+                width:30px;
+                height:30px;
+                background-image: url('/images/Icons/cart/cross-g.svg');
+              }
+              .edit{
+                display: inline-block;
+                width:30px;
+                height: 30px;
+                background-image: url('/images/Icons/cart/edit-p.svg');
+              }
+            }
+            .gear{
+              p{
+                margin: 0.25rem !important;
+                text-align: left;
+              }
+            }
+          }
+        .pagination{
+          justify-content: center;
+          .page-link {
+            color: $secondary-light-color;
+            background-color: transparent;
+            border: none;
+            &:focus{
+              box-shadow: none;
+            }
+          }
+          .page-item.active .page-link {
+            color: $primary-color;
+            border:none;
+            border-bottom:2px solid $primary-color;
+          }
+        }
+      }
+    }
+  }
+  @media(max-width :500px){
+    .wrraper{
+      padding :1rem !important;
+    }
+  }

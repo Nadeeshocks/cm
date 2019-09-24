@@ -1,0 +1,50 @@
+.view-gear {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+  
+    .breadcrumb {
+      margin-left: 15px;
+    }
+  
+    .left-container {
+      flex: 1;
+      border: 1px solid lightgray;
+      padding: 10px;
+    }
+  
+    .right-container {
+      flex: 2;
+      display: flex;
+    }
+  
+    .gear-info {
+      flex: 1;
+      margin: 0 15px 15px 15px;
+    }
+  
+    .gear-purchase {
+      width: 200px;
+      border: 5px solid lightgray;
+      text-align: center;
+  
+      & > div:not(:last-child) {
+        padding: 10px 0;
+        border-bottom: 1px solid lightgray;
+      }
+  
+      .bottom-buttons {
+        padding: 5px 10px;
+  
+        & > * {
+          width: auto;
+          min-width: auto;
+        }
+  
+        .theme-btn-primary {
+          flex: 1;
+        }
+      }
+    }
+  }
+  

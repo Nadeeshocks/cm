@@ -1,0 +1,12 @@
+.cart {
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      
+      button:nth-child(n+2) {
+        margin-left: 15px;
+      }
+    }
+  }

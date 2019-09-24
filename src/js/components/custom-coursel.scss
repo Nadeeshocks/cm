@@ -1,0 +1,17 @@
+.gear-carousel {
+    width: 100%;
+  
+    .carousel-item {
+      height: 200px;
+      overflow: hidden;
+    }
+  
+    img {
+      height: 100%;
+    }
+  
+    .carousel-image-container {
+      height: 100%;
+      text-align: center;
+    }
+  }

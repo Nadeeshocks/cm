@@ -1,0 +1,14 @@
+.addgear-price{
+    width: 200px;
+        border: 5px solid lightgray;
+        padding: 5px 15px;
+    
+        & > * {
+          margin-top: 8px;
+        }
+    
+        .custom-input {
+          width: auto;
+          flex: 1;
+        }
+}

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default props =>{
   const { catagory } = props;
-  const name = catagory.cat_name.replace(/\s+/g, '-');;
+  // console.log("ya data", catgory);
+  // const name = catagory.cat_name.replace(/\s+/g, '-');;
   return (
     <div className="block-el">
       <div className="block-content">
@@ -11,7 +12,7 @@ export default props =>{
         <div className="desc">
           <span>{catagory.cat_name}</span>
           <button className="theme-btn theme-btn-outline-white">
-            <Link to={`/rentgear/${name}`} >View</Link>
+            <Link to={`/rentgear/${catagory.id}`} >View</Link>
           </button>
         </div>
       </div>

@@ -3,16 +3,61 @@ import { connect } from "react-redux";
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom'; 
-import SideBar from './sidbar';
+import Sidebar from './sidbar';
+import MainList from './mainlist';
+import { gearsByCategory } from './actions.js';
 import {
   Container, Row, Col, Breadcrumb, Table, Form, ListGroup, ListGroupItem,
   BreadcrumbItem, Pagination, PaginationItem, PaginationLink,
 } from 'reactstrap';
 
+
+
+
+
+
 class RentGear extends Component {
+
+    
+  
+     
+      state = {
+        activeIndex: 0,
+        category_name: "",
+        
+      }
+    
+// componentDidMount(){
+ 
+ 
+// }
+
+  componentDidMount(){
+    // console.log('previius props',prevProps);
+    // console.log('previius state',prevState);
+
+    const cat=this.props.match.params;
+     if(cat.id !== null){
+       this.props.gearsByCategory(cat.id);
+     }
+     
+
+  }
+  
+// testdd(){
+//  const cat= this.props.match.params ;
+//   console.log('params is',cat.id)
+//   this.props.gearsByCategory(cat.id)
+// }
   render() {
-    const { catagories} = this.props;
-    console.log(catagories);
+  
+    
+    const { catagories,gear} = this.props;
+    
+    console.log(gear);
+    // console.log(mylisintgs);
+    // console.log('these are gears in index',gears);
+  
     return (
 
       <div className="rent-gear">
@@ -37,10 +82,12 @@ class RentGear extends Component {
           <Container>
             <Row>
               <Col md="3">
-              <SideBar catagories={catagories} />
+              <Sidebar catagories={catagories} />
+
               </Col>
               <Col md="9">
-                {/* <Main catagory={this.state.catagory}/> */}
+                <MainList gears={gear} catagories={catagories} />
+            
               </Col>
             </Row>
           </Container>
@@ -50,14 +97,38 @@ class RentGear extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+
+
+
+const mapStateToProps = state => {
+  
   return {
-    catagories: state.firestore.ordered.catagories
+    catagories: state.firestore.ordered.catagories,
+    gear: state.gearscat.message
+    
+  }
+  
+}
+
+const mapDispatchToProps = dispatch =>{
+
+  return {
+    gearsByCategory: (cat) => dispatch(gearsByCategory(cat))
   }
 }
+
+
 export default compose(
-  firestoreConnect([
-    { collection: 'catagories' }
-  ]),
-  connect(mapStateToProps)
+  connect(mapStateToProps, mapDispatchToProps),
+  firestoreConnect((props) => {
+   
+    
+    // const category=props.match.params;
+    // console.log(category.name);
+    return [
+      {   collection: 'catagories'} 
+    ]
+
+  }
+  )
 )(RentGear);

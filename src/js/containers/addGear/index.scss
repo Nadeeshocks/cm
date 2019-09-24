@@ -1,0 +1,213 @@
+.add-gear {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    
+    .add-gear-progress {
+      display: flex;
+      width: 500px;
+      margin-bottom: 15px;
+      .add-gear-progress-item {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        opacity: 0.2;
+        color: $primary-color;
+        position: relative;
+  
+        i {
+          font-size: 32px;
+          position: relative;
+          z-index: 1000;
+          background-color: white;
+        }
+  
+        &.active {
+          opacity: 1;
+        }
+  
+        &:nth-child(n+2):before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          border-top: 1px solid $primary-color;
+          left: -50%;
+          top: 16px;
+        }
+      }
+    }
+    .flex-row {
+      align-items: flex-start;
+  
+      
+    }
+    .type-tabs {
+      input {
+        display: none;
+      }
+  
+      label {
+        background: white;
+        color: orange;
+        padding: 5px 15px;
+        border: 1px solid lightgray;
+        display: inline-block;
+        border-radius: 30px;
+        margin-right: 5px;
+  
+        &.active {
+          color: white;
+          background-color: #00F077;
+        }
+      }
+    }
+  
+    .price-type-tabs {
+      input {
+        display: none;
+      }
+  
+      label {
+        color: orange;
+        padding: 3px 10px;
+        margin: 2px;
+        border: 1px solid lightgray;
+        display: inline-block;
+        font-size: 12px;
+  
+        &.active {
+          color: white;
+          background-color: #00F077;
+        }
+      }
+    }
+    .info-right-container {
+      margin-left: 15px;
+    }
+  
+    .buttons-container {
+      margin-bottom: 15px;
+      button:not(:first-child) {
+        margin-left: 15px;
+      }
+    }
+  
+    .add-gear-photos {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid lightgray;
+      min-height: 300px;
+      width: 100%;
+      max-width: 600px;
+      margin: 15px;
+      padding: 15px;
+    }
+  
+    .gear-carousel {
+      margin-top: 15px;
+      width: 300px;
+  
+      img {
+        width: 100%;
+      }
+    }
+  
+    .add-gear-price {
+      display: flex;
+      margin-bottom: 15px;
+  
+      & > div {
+        margin-left: 15px;
+      }
+    }
+  
+    .gear-accessories-address {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid lightgray;
+    }
+  
+    .gear-middle-container {
+      width: 250px;
+    }
+  
+    .gear-right-container {
+      width: 200px;
+      border: 5px solid lightgray;
+      padding: 5px 15px;
+  
+      & > * {
+        margin-top: 8px;
+      }
+  
+      .buttons-container {
+        display: flex;
+        button {
+          width: auto;
+          min-width: auto;
+        }
+  
+        .theme-btn-primary {
+          flex: 1;
+        }
+      }
+  
+      .custom-input {
+        width: auto;
+        flex: 1;
+      }
+    }
+  
+    .success-message {
+      text-align: center;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 4px solid lightgray;
+      padding: 10px;
+  
+      & > * {
+        margin-top: 10px;
+      }
+  
+      .flex-row {
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+  
+    .add-gear-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .add-gear-image, .add-gear-addimage {
+        height: 100px;
+        width: 100px;
+        border: 1px solid lightgray;
+        margin: 0 10px 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+  
+        img {
+          width: 100%;
+        }
+      }
+  
+      .add-gear-addimage {
+        i {
+          font-size: 30px;
+          color: $primary-color;
+        }
+      }
+    }
+}
+  

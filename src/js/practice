@@ -1,0 +1,173 @@
+
+
+ const count = 0;
+    const img= this.props.gear.url[0];
+     let cartdd = {
+      id: id,
+      url:Resizer.imageFileResizer(
+       img,
+        200,
+        200,
+        'JPEG',
+        100,
+        0,
+        uri => {
+            console.log(uri)
+        },
+        'base64'
+    ),
+      StartDate: this.state.startDate,
+      endDate: this.state.endDate
+      
+    };
+    
+
+   
+
+  this.props.cartCookie.push(cartdd);
+ 
+
+    
+  console.log('push array',this.props.cartCookie);
+    Cookies.set(['gearsitem'], this.props.cartCookie);//, { expires: 7, path: '' });
+    Cookies.set('cartcount', count + 1, { expires: 7, path: '' });
+
+    // this.setState({cartitems:Cookies.get('gearsitem'),
+    //               cartitemscount:Cookies.get('cartcount')
+    //              });
+
+
+import React, { Component } from 'react';
+// import CustomInput from '../customInput';
+
+import Cookies from 'js-cookie';
+import {
+  Col, Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+
+import AliceCarousel from 'react-alice-carousel'
+import "react-alice-carousel/lib/alice-carousel.css"
+import Price from './price';
+import { gearDetail } from '../containers/rentGear/actions';
+import { connect } from "react-redux";
+import Cart from './cart';
+
+class GearDetail extends Component {
+  state={
+    cartitems:[],
+    cartitemscount:0
+  }
+    componentDidMount(){
+        const cat=this.props.match.params.id;
+        console.log(this.props);
+        
+        this.props.gearDetail(cat);
+    }
+
+    onAddItemToCart(id,url,brand){
+      const cartitems=new Array();
+      const count=0;
+      cartitems.push(id,url,brand);
+     
+
+     
+      Cookies.set('gearsitem',JSON.stringify(cartitems) , { expires: 7, path: '' });
+      Cookies.set('cartcount',count+1 , { expires: 7, path: '' });
+
+      this.setState({cartitems:Cookies.get('gearsitem'),
+                    cartitemscount:Cookies.get('cartcount')
+                   });
+                  //  <Cart cartitems={Cookies.get('gearsitem')} />
+      // setCookie = () => {
+      // let d = new Date();
+      // d.setTime(d.getTime() + (minutes*60*1000));
+      //   cookie.set("onboarded", JSON.stringify(cartitems), {path: "/", expires: d});
+      // };
+    }
+
+render(){
+  console.log('get cokkie',Cookies.get('gearsitem'))
+  const id=this.props.match.params.id;
+   const slider = (
+        <AliceCarousel mouseDragEnabled >
+          {this.props.gear.url && this.props.gear.url.map(( image )=>(
+            <img src={image} onDragStart={e => e.preventDefault()}  />
+          ))}
+        </AliceCarousel>
+        
+      );
+    return(
+ <div className="add-gear-price">
+      <div className="gear-left-container">
+        <div className="theme-text-small text-gray">{this.props.gear.categoryName}</div>
+        <h4>{ this.props.gear.Brand + ' ' + this.props.gear.Model }</h4>
+
+        <div className="price-type-tabs">
+          {/* <input id="new" type="radio" value="new"/>
+          <label className={props.pstate.type === "new" ? 'active' : ''} htmlFor="new">New</label>
+          <input id="like-new" type="radio" value="like_new"/>
+          <label className={props.pstate.type === "like_new" ? 'active' : ''} htmlFor="like-new">Like New</label>
+          <input id="slightly-worn" type="radio" value="slightly_worn"/>
+          <label className={props.pstate.type === "slightly_worn" ? 'active' : ''} htmlFor="slightly-worn">Slightly Worn</label>
+          <input id="worn" type="radio" value="worn"/>
+          <label className={props.pstate.type === "worn" ? 'active' : ''} htmlFor="worn">Worn</label> */}
+        </div>
+
+        <div className="gear-carousel">
+          {slider}
+        </div>
+      </div>
+      <div className="gear-middle-container">
+        <div className="flex-row gear-accessories-address">
+          <div>
+            <div className="theme-text-small text-gray">Accessories</div>
+              <ul>
+                {
+                  this.props.gear.accessories && this.props.gear.accessories.map((item, key)=>(
+                    <li key={key}>{item}</li>
+                  ))
+                }
+              </ul>
+          </div>
+          <div>
+            <div className="theme-text-small text-gray">Address</div>
+            <div className="">{this.props.gear.Address}</div>
+            <div className="">{this.props.gear.City}</div>
+          </div>
+        </div>
+        <div>
+          <div className="theme-text-small text-gray">Description</div>
+          <p>
+            { this.props.gear.Description }
+          </p>
+        </div>
+      </div>
+      <div className="gear-right-container">
+
+      <Button className="cart" onClick={() => this.onAddItemToCart(id,this.props.gear.url[0],this.props.gear.Brand)}>Add to cart</Button>
+                {/* <Price pstate={props.pstate} addGear={props.addGear} onInputhandle={props.onInputhandle} previousStep={props.previousStep}/> */}
+      </div>
+    </div>
+    )
+}
+}const mapStateToProps = state => {
+    
+    return {
+     
+      gear: state.gearscat
+      
+    }
+    
+  }
+
+const mapDispatchToProps = dispatch =>{
+
+    return {
+      gearDetail: (cat) => dispatch(gearDetail(cat))
+    }
+  }
+  
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(GearDetail);
+ 
