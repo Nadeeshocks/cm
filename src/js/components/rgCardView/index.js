@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { Favourites } from '../../components/favourite/favourite';
 
 import { handleError, addFavourite, formatDate, days,  } from '../../containers/rentGear/actions';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 import Cart from '../cart';
 

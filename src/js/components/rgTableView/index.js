@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { addFavourites } from '../../containers/rentGear/actions';
 
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 import { handleError, addFavourite, formatDate, days,  } from '../../containers/rentGear/actions';
 

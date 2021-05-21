@@ -5,7 +5,7 @@ import { Breadcrumb, BreadcrumbItem, Dropdown, Form, DropdownToggle, DropdownMen
 
 export default props => {
     return (
-        <Dropdown  isOpen={props.pstate.dropdownOpen} toggle={props.toggle}>
+        <Dropdown  isOpen={props.pstate.dropdownOpen} toggle={props.toggle} style={{width:'100%'}}>
             <DropdownToggle caret className="form-control">
                 { props.pstate.categoryName }
             </DropdownToggle>

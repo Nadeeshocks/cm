@@ -4,7 +4,7 @@ import { compose } from 'redux'
 import { getUser, changePassword, updateUser } from './action'
 import UserDetails from '../../../components/accountDetails/userDetails'
 import ChangePassword from '../../../components/accountDetails/changePassword'
-import { dispatch } from 'C:/Users/Rameez Raja/AppData/Local/Microsoft/TypeScript/3.5/node_modules/rxjs/internal/observable/range';
+// import { dispatch } from 'C:/Users/Rameez Raja/AppData/Local/Microsoft/TypeScript/3.5/node_modules/rxjs/internal/observable/range';
 
 
 class AccountDetails extends Component {

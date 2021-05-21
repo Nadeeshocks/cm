@@ -20,7 +20,7 @@ class AddGear extends Component {
     super();
     this.progressSteps = ["Info", "Photo", "Address", "Price"];
     this.state = {
-          progressStep: 3,
+          progressStep: 0,
           dropdownOpen: false,
           isGearAdded: false,
           categoryName : 'Categories',
@@ -155,11 +155,13 @@ class AddGear extends Component {
       case 3:
         return <Review pstate={this.state} onInputhandle={this.onInputHandle} previousStep={this.previousStep} addGear={this.handleSubmit}/>
         break
+      default:
+        return null;  
     }
   }
 
   nextStep() {
-    
+
     if(this.validate()) {
       this.setState({
         progressStep: ++this.state.progressStep
@@ -178,7 +180,7 @@ class AddGear extends Component {
       case 0:
         const { categoryName, Brand, Model, Description, type,accessories,isKit } = this.state;
         if(categoryName != 'Categories')
-        if ( Brand && Model && Description && type && accessories && isKit) {
+        if ( Brand && Model && Description && type && accessories) {
           return true;
         }
         break;
@@ -206,7 +208,8 @@ class AddGear extends Component {
         //   console.log("price add a lai");
         // }
         break
-
+      default:
+        return null; 
     }
   
     // handleError("Please provide the required details")

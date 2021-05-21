@@ -12,7 +12,7 @@ import Accessories from './accessories'
 export default props => {
         return( 
         <Form className="theme-form add-gear-info">
-        <div className="flex-row">
+        <div className="flex-rows">
           <div className="info-left-container">    
           <div className="theme-form-field">
             <Categories pstate={props.pstate} toggle={props.toggle} cats={props.cats} onChangeCat={ cat =>props.onChangeCat(cat) }/>
@@ -24,7 +24,7 @@ export default props => {
               <CustomInput value={props.pstate.Model} name='Model' placeholder='Model'  onChange={props.onInputhandle} type="text"/>
             </div>
             <div className="theme-form-field">
-              <CustomInput value={props.pstate.Description} name='Description' placeholder='Description' onChange={props.onInputhandle} type="text"/>
+              <CustomInput value={props.pstate.Description} name='Description' placeholder='Description' onChange={props.onInputhandle} type="textarea"/>
             </div>
           </div>
           <div className="info-right-container">

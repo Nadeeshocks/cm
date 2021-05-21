@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Input} from 'reactstrap';
+import { Input, InputGroupAddon } from "reactstrap";
 
 export default class CustomInput extends Component {
   render() {
-    const { placeholder, type ,label, value, icon, required } = this.props;
+    const { placeholder, type, label, value, icon, required } = this.props;
     return (
       <div className="input-field">
-        <label htmlFor={label} className="theme-text-small label">{label}</label>
+        <label htmlFor={label} className="theme-text-small label">
+          {label}
+        </label>
+        {icon && <InputGroupAddon addonType="prepend">$</InputGroupAddon>}
         <input
-            name={this.props.name}
-            placeholder={ placeholder }
-            type = {type}
-            required = { required || false }
-            onChange={this.props.onChange}
-            // onChange={(e)=> console.log(e.target.value)}
-            value={value}
-            className="form-control"
+          name={this.props.name}
+          placeholder={placeholder}
+          type={type}
+          required={required || false}
+          onChange={this.props.onChange}
+          // onChange={(e)=> console.log(e.target.value)}
+          value={value}
+          className="form-control"
         />
       </div>
       // <div className= {icon ? "custom-input custom-input-with-icon" : "custom-input"}>
@@ -39,4 +42,3 @@ export default class CustomInput extends Component {
     );
   }
 }
-

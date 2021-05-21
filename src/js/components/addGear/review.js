@@ -38,16 +38,19 @@ export default props => {
         </div>
       </div>
       <div className="gear-middle-container">
-        <div className="flex-row gear-accessories-address">
+        <div className="gear-accessories-address">
           <div>
             <div className="theme-text-small text-gray">Accessories</div>
-              <ul>
+              {/* <ul> */}
+              <div className="gear-listt">
                 {
                   props.pstate.accessories.map((item, key)=>(
-                    <li key={key}>{item}</li>
+                    // <li key={key}>{item}</li>
+                    <div className="" key={key}>{item}</div>
                   ))
                 }
-              </ul>
+                </div>
+              {/* </ul> */}
           </div>
           <div>
             <div className="theme-text-small text-gray">Address</div>
@@ -55,8 +58,8 @@ export default props => {
             <div className="">{props.pstate.City}</div>
           </div>
         </div>
-        <div>
-          <div className="theme-text-small text-gray">Description</div>
+        <div className="gear-description">
+          <div className="theme-text-small text-gray gear-description">Description</div>
           <p>
             { props.pstate.Description }
           </p>

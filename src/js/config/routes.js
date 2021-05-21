@@ -5,7 +5,7 @@ import SignIn from '../containers/auth/signIn/index';
 import SignUp from '../containers/auth/signUp/index';
 import Dashboard from '../containers/dashboard/index';
 import RentGear from '../containers/rentGear/index';
-import AddGear from '../containers/rentGear/addgear';
+// import AddGear from '../containers/rentGear/addgear';
 import MainList from '../containers/rentGear/mainlist';
 import ViewGear from '../components/ViewGear';
 import GearDetail from '../components/geardetail';
@@ -34,7 +34,7 @@ export default (
     {/* <Route path="/addgear" component={AddGear} /> */}
     {/* <Route path="/gear/:id" component={ViewGear} /> */}
     <Route path="/cart" component={Cart} />
-  </Switch>);
+  {/* </Switch>); */}
     <Route path="/listgear" component={ListGear} />
     <Route path="/addgear" component={AddGear} />
     <Route path="/updategear/:id" component={UpdateGear} />

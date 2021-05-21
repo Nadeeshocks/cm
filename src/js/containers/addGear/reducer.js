@@ -18,4 +18,4 @@ const addGear_reducer = (state = initState, action) => {
         
 };
 
-export default addGear_reducer;s
+export default addGear_reducer;

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Table } from 'reactstrap';
 import moment from 'moment';
 import { handleError, getCarts, formatDate, days, deleteCartItem } from '../containers/rentGear/actions';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 // import Checkout from '../containers/rentGear/checkout';
 class Cart extends Component {
   

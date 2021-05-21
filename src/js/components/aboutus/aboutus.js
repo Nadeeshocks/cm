@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
-import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import React, { Component } from "react";
+import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 // import aboutCM from '../../assets/images/01.png';
 // import press from '../../assets/images/press.jpg';
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from "reactstrap";
+import ScrollMenu from "react-horizontal-scrolling-menu";
 
 const team = [
-  { name: "Joe Stapleton", job_title: "Co-founder", img: '/images/team/1.jpg' },
-  { name: "Jakob Storm", job_title: "Co-founder", img: '/images/team/2.jpg' },
-  { name: "Josh Kocaurek", job_title: "CEO", img: '/images/team/3.jpg' },
-  { name: "Tomass Sola", job_title: "Lead Sales Manager", img: '/images/team/5.jpg' },
-]
+  { name: "Joe Stapleton", job_title: "Co-founder", img: "/images/team/1.jpg" },
+  { name: "Jakob Storm", job_title: "Co-founder", img: "/images/team/2.jpg" },
+  { name: "Josh Kocaurek", job_title: "CEO", img: "/images/team/3.jpg" },
+  {
+    name: "Tomass Sola",
+    job_title: "Lead Sales Manager",
+    img: "/images/team/5.jpg",
+  },
+];
 // Functional Component
-const TeamMember = ({ member: { name , job_title , img} ,src }, ...props) => {
+const TeamMember = ({ member: { name, job_title, img }, src }, ...props) => {
   return (
     <Col sm="4">
       <Card inverse>
@@ -29,6 +34,30 @@ const TeamMember = ({ member: { name , job_title , img} ,src }, ...props) => {
 
 class About extends Component {
   render() {
+
+  const list = [
+  { name: 'item1' },
+  { name: 'item2' },
+  { name: 'item3' },
+  { name: 'item4' },
+  { name: 'item5' },
+  { name: 'item6' },
+  { name: 'item7' },
+  { name: 'item8' },
+  { name: 'item9' }
+];
+
+const MenuItem = ({text, selected}) => {
+  return <div
+    className={`menu-item ${selected ? 'active' : ''}`}
+    >{text}</div>;
+};
+
+    const Arrow = ({ text, className }) => {
+      return <div className={className}>{text}</div>;
+    };
+    const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" });
+    const ArrowRight = Arrow({ text: ">", className: "arrow-next" });
     return (
       <div className="about-us">
         <div className="about-us-head">
@@ -45,7 +74,13 @@ class About extends Component {
                   <span>Introduction</span>
                 </h4>
                 <p className="theme-text-small about-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, consequuntur vitae ipsum doloribus repellendus dolorum aliquid odio aspernatur at labore voluptatem laudantium ducimus libero inventore eos odit magni! Nesciunt, quos.dolorum aliquid odio aspernatur at labore voluptatem laudantium ducimus libero inventore eos odit magni! Nesciunt, quos.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo, consequuntur vitae ipsum doloribus repellendus
+                  dolorum aliquid odio aspernatur at labore voluptatem
+                  laudantium ducimus libero inventore eos odit magni! Nesciunt,
+                  quos.dolorum aliquid odio aspernatur at labore voluptatem
+                  laudantium ducimus libero inventore eos odit magni! Nesciunt,
+                  quos.
                 </p>
               </Col>
               <Col sm="6">
@@ -66,11 +101,9 @@ class About extends Component {
                 </Col>
               </Row>
               <Row>
-                {
-                  team.map((member, index) => {
-                    return <TeamMember member={member} key={index}/>
-                  })
-                }
+                {team.map((member, index) => {
+                  return <TeamMember member={member} key={index} />;
+                })}
               </Row>
             </Container>
           </div>
@@ -82,6 +115,13 @@ class About extends Component {
                 </Col>
                 <Col className="text-center">
                   {/* <img src={press} alt=""/> */}
+                  <ScrollMenu
+                    // data={menu}
+                    arrowLeft={ArrowLeft}
+                    arrowRight={ArrowRight}
+                    // selected={selected}
+                    // onSelect={this.onSelect}
+                  />
                 </Col>
               </Row>
             </Container>

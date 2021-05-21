@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
@@ -10,7 +10,7 @@ import { formatDate } from '../containers/rentGear/actions';
 import { gearDetail } from '../containers/rentGear/actions';
 import Rating from 'react-rating';
 import 'react-datepicker/dist/react-datepicker.css';
-import Resizer from 'react-image-file-resizer';
+// import Resizer from 'react-image-file-resizer';
 import { addCart } from '../containers/rentGear/actions';
 class GearDetail extends Component {
 

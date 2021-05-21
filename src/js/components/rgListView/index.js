@@ -6,7 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 // import { addFavourites } from '../../containers/rentGear/actions';
 import { handleError, addFavourite, formatDate, days,  } from '../../containers/rentGear/actions';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { connect } from "react-redux";
  const onAddItemToCart = (id) => {
   
